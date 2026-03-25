@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eventos · Som e Luz Profissional</title>
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #ff9800;
+      --text: #f5f5f5;
+      --muted: #b0b3c0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1a237e 0, #050816 45%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+
+    .logo {
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.75rem 1.6rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1a1305;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 45px rgba(0,0,0,0.6);
+      background: #ffb74d;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.24);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .badges span {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.3);
+    }
+
+    main {
+      background: linear-gradient(to bottom, rgba(5,8,22,0) 0, #050816 40%, #02030a 100%);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
+      main { padding-top: 2.5rem; }
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    li + li { margin-top: 0.4rem; }
+
+    li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 0.45rem;
+    }
+
+    .card {
+      background: rgba(15,18,40,0.9);
+      border-radius: 1.1rem;
+      padding: 1.4rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.6);
+      backdrop-filter: blur(16px);
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
+      color: var(--muted);
+      word-break: break-word;
+    }
+
+    .contact-label {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .contact-value a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255,255,255,0.3);
+    }
+
+    .contact-value a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: #02030a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Som & Luz · Eventos</div>
+    <div class="pill">Produção técnica de eventos em Lisboa e arredores</div>
+    <h1>Som e <span>Luz</span> profissionais para o próximo evento.</h1>
+    <p class="subtitle">
+      Sistemas de som potentes, iluminação cénica e equipas técnicas experientes
+      para casamentos, festas privadas, concertos e eventos corporate.
+    </p>
+    <div class="cta-group">
+      <a class="btn btn-primary" href="https://wa.me/351911234567" target="_blank" rel="noopener">
+        Pedir orçamento por WhatsApp
+      </a>
+      <a class="btn btn-outline" href="#contacto">
+        Ver contactos
+      </a>
+    </div>
+    <div class="badges">
+      <span>Mais de 10 anos em eventos</span>
+      <span>Sistemas de som line array</span>
+      <span>Iluminação LED & efeitos</span>
+      <span>Serviço em todo o país</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section>
+        <h2>Serviços</h2>
+        <p class="section-text">
+          Cuidamos de toda a parte técnica do teu evento: estudo do espaço,
+          montagem, operação durante o evento e desmontagem no fim.
+        </p>
+        <ul>
+          <li>PA completo para interiores e exteriores.</li>
+          <li>Backline e monição para bandas ao vivo e DJs.</li>
+          <li>Iluminação de palco, pista de dança e ambiente.</li>
+          <li>Ecrãs, estruturas e efeitos especiais (fumo, cegas, etc.).</li>
+          <li>Equipa técnica para acompanhamento do início ao fim.</li>
+        </ul>
+      </section>
+
+      <aside id="contacto" class="card">
+        <h2>Contacto rápido</h2>
+        <p class="section-text">
+          Envia os detalhes do teu evento (data, local, tipo) e
+          respondemos com uma proposta adaptada.
+        </p>
+
+        <div class="contact-line">
+          <div>
+            <div class="contact-label">Telefone / WhatsApp</div>
+            <div class="contact-value">
+              <a href="tel:+351911234567">+351 911 234 567</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-line">
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:contacto@exemploeventos.pt">contacto@exemploeventos.pt</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-line">
+          <div>
+            <div class="contact-label">Instagram</div>
+            <div class="contact-value">
+              <a href="https://instagram.com/exemploeventos" target="_blank" rel="noopener">
+                @exemploeventos
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-line">
+          <div>
+            <div class="contact-label">Localização</div>
+            <div class="contact-value">
+              Lisboa · Portugal
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Som & Luz · Eventos. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
