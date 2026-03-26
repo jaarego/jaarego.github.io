@@ -1,6 +1,6 @@
 ---
 permalink: /about/
-title: "Sobre"
+title: "About"
 ---
 
 Com ampla experiência no setor audiovisual, somos uma empresa especializada na produção e organização de eventos, desde concertos memoráveis e festas temáticas a eventos corporativos, públicos ou privados. Oferecemos uma variedade completa de serviços, aluguer de equipamentos de som e iluminação, ecrãs de LED, palcos e estruturas, sempre com garantia de qualidade e inovação.
