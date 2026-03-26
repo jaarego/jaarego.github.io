@@ -1,8 +1,10 @@
 ---
 permalink: /about/
-title: "About"
+title: "Sobre"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+Com ampla experiência no setor audiovisual, somos uma empresa especializada na produção e organização de eventos, desde concertos memoráveis e festas temáticas a eventos corporativos, públicos ou privados. Oferecemos uma variedade completa de serviços, aluguer de equipamentos de som e iluminação, ecrãs de LED, palcos e estruturas, sempre com garantia de qualidade e inovação.
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+A Nossa equipa é formada por técnicos qualificados que trazem dinamismo e eficiência a cada projeto. Transformamos ideias em experiências inesquecíveis graças à dedicação da nossa equipa, cuidando de cada detalhe, e ao apoio de parceiros e clientes, garantindo o sucesso de cada evento.
+
+Acreditamos que a arte de produzir eventos vai além da técnica: é uma verdadeira celebração da criatividade e da conexão humana. Estamos comprometidos em continuar a oferecer o melhor em serviços audiovisuais, sempre com inovação, qualidade e paixão, transformando cada momento em algo único.
