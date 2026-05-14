@@ -199,12 +199,46 @@ footer {
     visibility: hidden;
 }
 
-/* Responsividade Mobile */
+/* Adaptação Ultra-Compacta para Dispositivos Móveis */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Oculta menu no telemóvel para simplicidade inicial */
-    .hero h1 { font-size: 2.3rem; }
-    section { padding: 4rem 5%; }
+    .audio-player-fixed {
+        /* Mantém tudo em linha para não esticar a barra para cima */
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between;
+        
+        /* Reduz o espaçamento ao mínimo para caber nos ecrãs pequenos */
+        padding: 6px 12px; 
+        height: 55px; 
+    }
+
+    /* Esconde o subtítulo no telemóvel para poupar espaço */
+    .audio-fixed-subtitle {
+        display: none;
+    }
+
+    /* Encurta o tamanho do título da música para não empurrar os botões */
+    .audio-fixed-title {
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+    }
+
+    /* Otimização do Player Nativo para ecrãs táteis */
+    .audio-controls-box audio {
+        max-width: 160px; /* Encolhe a barra de progresso nativa no telemóvel */
+        height: 32px;
+    }
+
+    /* Adapta o texto do rodapé integrado para o espaço restante */
+    .footer-integrated p {
+        font-size: 0.65rem;
+        white-space: nowrap;
+    }
 }
+
 
 /* Barra fixa no fundo do ecrã */
 .audio-player-fixed {
