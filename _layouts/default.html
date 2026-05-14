@@ -1,319 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soundwave · Som e Luz Profissional</title>
-  <style>
-    :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --accent: #ff9800;
-      --text: #f5f5f5;
-      --muted: #b0b3c0;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1a237e 0, #050816 45%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 1.5rem;
-    }
-
-    .logo {
-      font-size: 1rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 3.4rem);
-      margin-bottom: 0.75rem;
-    }
-
-    h1 span {
-      color: var(--accent);
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 540px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-bottom: 0.9rem;
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-top: 1.2rem;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.75rem 1.6rem;
-      border: none;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #1a1305;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 45px rgba(0,0,0,0.6);
-      background: #ffb74d;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.24);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.06);
-      transform: translateY(-1px);
-    }
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .badges span {
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(0,0,0,0.3);
-    }
-
-    main {
-      background: linear-gradient(to bottom, rgba(5,8,22,0) 0, #050816 40%, #02030a 100%);
-      padding: 3rem 1.5rem 2.5rem;
-    }
-
-    .grid {
-      max-width: 960px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 768px) {
-      .grid { grid-template-columns: 1fr; }
-      main { padding-top: 2.5rem; }
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .section-text {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-    }
-
-    ul {
-      list-style: none;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    li + li { margin-top: 0.4rem; }
-
-    li::before {
-      content: "•";
-      color: var(--accent);
-      margin-right: 0.45rem;
-    }
-
-    .card {
-      background: rgba(15,18,40,0.9);
-      border-radius: 1.1rem;
-      padding: 1.4rem 1.5rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.6);
-      backdrop-filter: blur(16px);
-    }
-
-    .contact-line {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      font-size: 0.92rem;
-      margin-bottom: 0.6rem;
-      color: var(--muted);
-      word-break: break-word;
-    }
-
-    .contact-label {
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      color: rgba(255,255,255,0.55);
-    }
-
-    .contact-value a {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(255,255,255,0.3);
-    }
-
-    .contact-value a:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    footer {
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      background: #02030a;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUNDWAVE produções | Áudio Profissional</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Soundwave">
-    <div class="logo">Soundwave Produções</div>
-    <div class="pill">Produção técnica de eventos</div>
-    <h1>Som e <span>Luz</span> profissionais para o próximo evento.</h1>
-    <p class="subtitle">
-      Sistemas de som potentes, iluminação cénica e equipas técnicas experientes
-      para casamentos, festas privadas, concertos e eventos corporate.
-    </p>
-    <div class="cta-group">
-      <a class="btn btn-primary" href="https://wa.me/351964807181" target="_blank" rel="noopener">
-        Pedir orçamento por WhatsApp
-      </a>
-      <a class="btn btn-outline" href="#contacto">
-        Ver contactos
-      </a>
+
+    <header class="navbar">
+        <div class="logo">SOUNDWAVE<span>.</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contacto" class="btn-nav">Orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Transformamos Som em <span>Experiência</span></h1>
+                <p>Produção áudio profissional, mistura, masterização e sound design para artistas, marcas e cinema.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-primary">Iniciar Projeto</a>
+                    <a href="#portfolio" class="btn-secondary">Ouvir Portfólio</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="services">
+            <h2>Nossos Serviços</h2>
+            <p class="subtitle">O que fazemos na SOUNDWAVE produções</p>
+            <div class="grid-services">
+                <div class="service-card">
+                    <div class="icon">🎙️</div>
+                    <h3>Gravação & Produção</h3>
+                    <p>Captura de alta fidelidade e direção musical para projetos de qualquer dimensão.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🎛️</div>
+                    <h3>Mistura & Masterização</h3>
+                    <p>Equilíbrio, clareza e o volume competitivo que a tua música precisa para o mercado.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🔊</div>
+                    <h3>Sound Design</h3>
+                    <p>Criação de efeitos sonoros e ambientes de áudio imersivos para vídeo e jogos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>Portfólio</h2>
+            <div class="grid-portfolio">
+                <div class="portfolio-item"><h4>Projeto Álbum Pop</h4><p>Produção Completa</p></div>
+                <div class="portfolio-item"><h4>Publicidade TV</h4><p>Sound Design & Mix</p></div>
+                <div class="portfolio-item"><h4>Trilha Sonora Filme</h4><p>Composição</p></div>
+            </div>
+        </section>
+
+<section id="contacto" class="contact">
+    <div class="contact-container">
+        <h2>Vamos Trabalhar Juntos?</h2>
+        <p>Explica-nos o teu projeto e respondemos em menos de 24 horas.</p>
+        
+        <!-- Formulário ligado ao Web3Forms -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            
+            <!-- COLA A TUA CHAVE DE ACESSO AQUI -->
+            <input type="hidden" name="access_key" value="de7e4241-031c-41dc-b408-7dcd6bf8232e">
+            
+            <!-- Evita spam e robôs de forma invisível -->
+            <input type="checkbox" name="botcheck" class="hidden-honeypot" style="display: none;">
+
+            <div class="form-group">
+                <input type="text" name="Nome" placeholder="Teu Nome" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="Email" placeholder="Teu Email" required>
+            </div>
+            
+            <div class="form-group">
+                <textarea name="Mensagem" placeholder="Fala-nos sobre a tua ideia musical..." rows="5" required></textarea>
+            </div>
+            
+            <!-- Página para onde o cliente é redirecionado após enviar (Opcional) -->
+            <!-- <input type="hidden" name="redirect" value="github.io"> -->
+
+            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+        </form>
     </div>
-    <div class="badges">
-      <span>Mais de 10 anos em eventos</span>
-      <span>Sistemas de som line array</span>
-      <span>Iluminação LED & efeitos</span>
-      <span>Serviço em todo o país</span>
+</section>
+
+    </main>
+
+    <footer>
+    </footer>
+
+    <div class="audio-player-fixed">
+        <div class="audio-info">
+            <h4 class="audio-fixed-title">Nome da Música Exemplo</h4>
+            <p class="audio-fixed-subtitle">A Reproduzir</p>
+        </div>
+        
+        <!-- Player HTML5 Nativo -->
+        <audio controls>
+            <source src="assets/exemplo.mp3" type="audio/mpeg">
+            O seu navegador não suporta o player.
+        </audio>
+        
+        <!-- Linha direita: Rodapé / Footer -->
+        <div class="footer-bottom-row">
+            <p>&copy; 2026 SOUNDWAVE produções. Todos os direitos reservados.</p>
+        </div>
     </div>
-  </header>
 
-  <main>
-    <div class="grid">
-      <section>
-        <h2>Serviços</h2>
-        <p class="section-text">
-          Cuidamos de toda a parte técnica do teu evento: estudo do espaço,
-          montagem, operação durante o evento e desmontagem no fim.
-        </p>
-        <ul>
-          <li>PA completo para interiores e exteriores.</li>
-          <li>Backline e monição para bandas ao vivo e DJs.</li>
-          <li>Iluminação de palco, pista de dança e ambiente.</li>
-          <li>Ecrãs, estruturas e efeitos especiais (fumo, cegas, etc.).</li>
-          <li>Equipa técnica para acompanhamento do início ao fim.</li>
-        </ul>
-      </section>
-
-      <aside id="contacto" class="card">
-        <h2>Contacto rápido</h2>
-        <p class="section-text">
-          Envia os detalhes do teu evento (data, local, tipo) e
-          respondemos com uma proposta adaptada.
-        </p>
-
-        <div class="contact-line">
-          <div>
-            <div class="contact-label">Telefone / WhatsApp</div>
-            <div class="contact-value">
-              <a href="tel:+351964807181">+351 964 807 181</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-line">
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value">
-              <a href="mailto:soundwaveproducoes@gmail.com">soundwaveproducoes@gmail.com</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-line">
-          <div>
-            <div class="contact-label">Instagram</div>
-            <div class="contact-value">
-              <a href="https://instagram.com/exemploeventos" target="_blank" rel="noopener">
-                @exemploeventos
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-line">
-          <div>
-            <div class="contact-label">Localização</div>
-            <div class="contact-value">
-              Elvas - Portugal
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <footer>
-    © <span id="year"></span> Soundwave. Todos os direitos reservados.
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
