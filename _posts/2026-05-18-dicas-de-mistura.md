@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "3 Erros Comuns na Mistura de Vozes"
-date: 2026-05-19
+date: 2026-05-18
 ---
 
 A mistura de vozes é uma das partes mais desafiantes na produção áudio. Aqui ficam três dicas rápidas para o teu próximo projeto:

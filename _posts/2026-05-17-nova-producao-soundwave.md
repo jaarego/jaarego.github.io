@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Nova Produção SOUNDWAVE: Álbum Pop 2026"
-date: 2026-05-18
+date: 2026-05-17
 ---
 
 Este é o nosso primeiro post oficial! 
