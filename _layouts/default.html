@@ -72,39 +72,54 @@
             </div>
         </section>
 
-<section id="contacto" class="contact">
-    <div class="contact-container">
-        <h2>Vamos Trabalhar Juntos?</h2>
-        <p>Explica-nos o teu projeto e respondemos em menos de 24 horas.</p>
-        
-        <!-- Formulário ligado ao Web3Forms -->
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <section id="blog" class="blog" style="background: var(--bg-dark);">
+            <h2>Novidades do Estúdio</h2>
+            <p class="subtitle">Fique por dentro das nossas produções e dicas de áudio</p>
             
-            <!-- COLA A TUA CHAVE DE ACESSO AQUI -->
-            <input type="hidden" name="access_key" value="de7e4241-031c-41dc-b408-7dcd6bf8232e">
-            
-            <!-- Evita spam e robôs de forma invisível -->
-            <input type="checkbox" name="botcheck" class="hidden-honeypot" style="display: none;">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: 0 auto;">
+                {% for post in site.posts %}
+                    <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent);">
+                        <span style="color: var(--accent); font-size: 0.8rem;">{{ post.date | date: "%d/%m/%Y" }}</span>
+                        <h3 style="margin: 0.5rem 0;"><a href="{{ post.url | relative_url }}" style="color: white; text-decoration: none;">{{ post.title }}</a></h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">{{ post.content | strip_html | truncatewords: 20 }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
 
-            <div class="form-group">
-                <input type="text" name="Nome" placeholder="Teu Nome" required>
-            </div>
-            
-            <div class="form-group">
-                <input type="email" name="Email" placeholder="Teu Email" required>
-            </div>
-            
-            <div class="form-group">
-                <textarea name="Mensagem" placeholder="Fala-nos sobre a tua ideia musical..." rows="5" required></textarea>
-            </div>
-            
-            <!-- Página para onde o cliente é redirecionado após enviar (Opcional) -->
-            <!-- <input type="hidden" name="redirect" value="github.io"> -->
+        <section id="contacto" class="contact">
+            <div class="contact-container">
+                <h2>Vamos Trabalhar Juntos?</h2>
+                <p>Explica-nos o teu projeto e respondemos em menos de 24 horas.</p>
+                
+                <!-- Formulário ligado ao Web3Forms -->
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    
+                    <!-- COLA A TUA CHAVE DE ACESSO AQUI -->
+                    <input type="hidden" name="access_key" value="de7e4241-031c-41dc-b408-7dcd6bf8232e">
+                    
+                    <!-- Evita spam e robôs de forma invisível -->
+                    <input type="checkbox" name="botcheck" class="hidden-honeypot" style="display: none;">
 
-            <button type="submit" class="btn-submit">Enviar Mensagem</button>
-        </form>
-    </div>
-</section>
+                    <div class="form-group">
+                        <input type="text" name="Nome" placeholder="Teu Nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="Email" placeholder="Teu Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="Mensagem" placeholder="Fala-nos sobre a tua ideia musical..." rows="5" required></textarea>
+                    </div>
+                    
+                    <!-- Página para onde o cliente é redirecionado após enviar (Opcional) -->
+                    <!-- <input type="hidden" name="redirect" value="github.io"> -->
+
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
 
     </main>
 

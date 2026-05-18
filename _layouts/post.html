@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | SOUNDWAVE</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+    <!-- Pode copiar a sua barra de navegação idêntica aqui se desejar -->
+
+    <main style="padding: 8rem 8%; max-width: 800px; margin: 0 auto;">
+        <a href="{{ '/' | relative_url }}" style="color: var(--accent); text-decoration: none;">&larr; Voltar ao Início</a>
+        <h1 style="margin-top: 2rem; font-size: 3rem;">{{ page.title }}</h1>
+        <p style="color: var(--text-muted); margin-bottom: 3rem;">Publicado em: {{ page.date | date: "%d/%m/%Y" }}</p>
+        
+        <div class="post-content">
+            {{ content }}
+        </div>
+    </main>
+
+</body>
+</html>
