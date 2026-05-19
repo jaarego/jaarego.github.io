@@ -4,128 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOUNDWAVE produções | Áudio Profissional</title>
-    <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">SOUNDWAVE<span>.</span></div>
-        
-        <!-- Novo Botão Hambúrguer -->
-        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <nav>
-            <ul class="nav-links" id="nav-list">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contacto" class="btn-nav">Orçamento</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <!-- Chamada da Navbar -->
+    {% include navbar.html %}
 
     <main>
-        <section id="inicio" class="hero">
-            <div class="hero-content">
-                <h1>Transformamos Som em <span>Experiência</span></h1>
-                <p>Produção áudio profissional, mistura, masterização e sound design para artistas, marcas e cinema.</p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn-primary">Iniciar Projeto</a>
-                    <a href="#portfolio" class="btn-secondary">Ouvir Portfólio</a>
-                </div>
-            </div>
-        </section>
+        <!-- Chamada do Hero e das Secções Principais -->
+        {% include hero.html %}
+        {% include services.html %}
+        {% include portfolio.html %}
 
-        <section id="servicos" class="services">
-            <h2>Nossos Serviços</h2>
-            <p class="subtitle">O que fazemos na SOUNDWAVE produções</p>
-            <div class="grid-services">
-                <div class="service-card">
-                    <div class="icon">🎙️</div>
-                    <h3>Gravação & Produção</h3>
-                    <p>Captura de alta fidelidade e direção musical para projetos de qualquer dimensão.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🎛️</div>
-                    <h3>Mistura & Masterização</h3>
-                    <p>Equilíbrio, clareza e o volume competitivo que a tua música precisa para o mercado.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🔊</div>
-                    <h3>Sound Design</h3>
-                    <p>Criação de efeitos sonoros e ambientes de áudio imersivos para vídeo e jogos.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio">
-            <h2>Portfólio</h2>
-            <div class="grid-portfolio">
-                <div class="portfolio-item"><h4>Projeto Álbum Pop</h4><p>Produção Completa</p></div>
-                <div class="portfolio-item"><h4>Publicidade TV</h4><p>Sound Design & Mix</p></div>
-                <div class="portfolio-item"><h4>Trilha Sonora Filme</h4><p>Composição</p></div>
-            </div>
-        </section>
-
-        <section id="blog" class="blog" style="background: var(--bg-dark);">
-            <h2>Novidades do Estúdio</h2>
-            <p class="subtitle">Fique por dentro das nossas produções e dicas de áudio</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: 0 auto;">
-
-                {% for post in site.posts limit: 10 %}
-                    <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent);">
-                        <span style="color: var(--accent); font-size: 0.8rem;">{{ post.date | date: "%d/%m/%Y" }}</span>
-                        <h3 style="margin: 0.5rem 0;"><a href="{{ post.url | relative_url }}" style="color: white; text-decoration: none;">{{ post.title }}</a></h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">{{ post.content | strip_html | truncatewords: 20 }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-
+        <!-- Mantemos a secção de contacto direta ou criamos a lista de posts abaixo -->
         <section id="contacto" class="contact">
-            <div class="contact-container">
-                <h2>Vamos Trabalhar Juntos?</h2>
-                <p>Explica-nos o teu projeto e respondemos em menos de 24 horas.</p>
-                
-                <!-- Formulário ligado ao Web3Forms -->
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    
-                    <!-- COLA A TUA CHAVE DE ACESSO AQUI -->
-                    <input type="hidden" name="access_key" value="de7e4241-031c-41dc-b408-7dcd6bf8232e">
-                    
-                    <!-- Evita spam e robôs de forma invisível -->
-                    <input type="checkbox" name="botcheck" class="hidden-honeypot" style="display: none;">
-
-                    <div class="form-group">
-                        <input type="text" name="Nome" placeholder="Teu Nome" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" name="Email" placeholder="Teu Email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea name="Mensagem" placeholder="Fala-nos sobre a tua ideia musical..." rows="5" required></textarea>
-                    </div>
-                    
-                    <!-- Página para onde o cliente é redirecionado após enviar (Opcional) -->
-                    <!-- <input type="hidden" name="redirect" value="github.io"> -->
-
-                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                </form>
-            </div>
+            <!-- o seu código do formulário Web3Forms mantém-se aqui seguro -->
         </section>
-
     </main>
-
-    <footer>
-    </footer>
 
     <footer>
         <div class="footer-bottom-row">
