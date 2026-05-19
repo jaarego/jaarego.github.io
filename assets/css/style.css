@@ -212,7 +212,11 @@ footer {
         border: none;
         cursor: pointer;
         z-index: 1001;
+        
+        /* ISTO EMPURRA O BOTÃO PARA A DIREITA */
+        margin-left: auto; 
     }
+
 
     .menu-toggle .bar {
         width: 100%;
@@ -232,9 +236,13 @@ footer {
         width: 100%;
         background: rgba(11, 15, 25, 0.98);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        padding: 2rem 0;
+        padding: 2rem 8%;
         gap: 1.5rem;
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        
+        /* Alinha os links e o texto à direita */
+        align-items: flex-end; 
+        text-align: right;
         
         /* Escondido por padrão (deslocado para cima) */
         opacity: 0;
@@ -242,6 +250,7 @@ footer {
         pointer-events: none;
         transition: all 0.3s ease-in-out;
     }
+
 
     /* Classe que o JavaScript vai ativar para mostrar o menu */
     .nav-links.active {
@@ -268,12 +277,22 @@ footer {
 }
 
 /* Ocultar o botão hambúrguer em computadores/ecrãs grandes */
-@media (min-width: 769px) {
+@media (max-width: 768px) {
+    /* Ativar e estilizar o botão dos 3 traços */
     .menu-toggle {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        
+        /* ISTO EMPURRA O BOTÃO PARA A DIREITA */
+        margin-left: auto; 
     }
-}
-
 
 /* Barra fixa no fundo do ecrã */
 .audio-player-fixed {
