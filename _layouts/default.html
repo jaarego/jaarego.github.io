@@ -19,14 +19,16 @@
         {% include services.html %}
         {% include portfolio.html %}
 
-        <!-- Mantemos a secção de contacto direta ou criamos a lista de posts abaixo -->
+        <section id="blog" class="blog" style="background: var(--bg-dark);">
+            {% include blog.html %}
+        </section>
+
+        <!-- Contacto -->
         <section id="contacto" class="contact">
             {% include contacto.html %}
         </section>
 
-        <section id="blog" class="blog" style="background: var(--bg-dark);">
-            {% include blog.html %}
-        </section>
+
     </main>
 
     <footer>
