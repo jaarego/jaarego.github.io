@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOUNDWAVE produções | Áudio Profissional</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
+
 <body>
 
     <!-- Chamada da Navbar -->
@@ -19,7 +21,11 @@
 
         <!-- Mantemos a secção de contacto direta ou criamos a lista de posts abaixo -->
         <section id="contacto" class="contact">
-            <!-- o seu código do formulário Web3Forms mantém-se aqui seguro -->
+            {% include contacto.html %}
+        </section>
+
+        <section id="blog" class="blog" style="background: var(--bg-dark);">
+            {% include blog.html %}
         </section>
     </main>
 
@@ -31,4 +37,5 @@
 
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
+
 </html>
