@@ -19,7 +19,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     /* Espaço para o rodapé não ficar tapado pelo leitor de áudio */
-    padding-bottom: 90px; 
+    /*padding-bottom: 90px; */
 }
 
 /* Navbar */
@@ -201,7 +201,7 @@ footer {
 }
 
 /* Responsividade Mobile e Menu Hambúrguer */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -268,7 +268,7 @@ footer {
 }
 
 /* Ocultar o botão hambúrguer em computadores */
-@media (min-width: 769px) {
+@media (min-width: 961px) {
     .menu-toggle {
         display: none;
     }
