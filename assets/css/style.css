@@ -18,6 +18,8 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.6;
+    /* Espaço para o rodapé não ficar tapado pelo leitor de áudio */
+    padding-bottom: 90px; 
 }
 
 /* Navbar */
@@ -192,8 +194,7 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/*pequena regra ao final do teu ficheiro de estilos para garantir que o campo anti-spam (honeypot) nunca aparece visível para os utilizadores reais, apenas para os robôs de spam*/
-
+/* Campo anti-spam invisível */
 .hidden-honeypot {
     display: none !important;
     visibility: hidden;
@@ -201,7 +202,6 @@ footer {
 
 /* Responsividade Mobile e Menu Hambúrguer */
 @media (max-width: 768px) {
-    /* Ativar e estilizar o botão dos 3 traços */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -212,11 +212,8 @@ footer {
         border: none;
         cursor: pointer;
         z-index: 1001;
-        
-        /* ISTO EMPURRA O BOTÃO PARA A DIREITA */
-        margin-left: auto; 
+        margin-left: auto; /* Puxa o botão dos 3 traços para a direita */
     }
-
 
     .menu-toggle .bar {
         width: 100%;
@@ -226,7 +223,7 @@ footer {
         transition: all 0.3s ease-in-out;
     }
 
-    /* Transformar a lista de links num menu cortina que desce */
+    /* Menu em cascata alinhado à direita no mobile */
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -239,27 +236,21 @@ footer {
         padding: 2rem 8%;
         gap: 1.5rem;
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        
-        /* Alinha os links e o texto à direita */
         align-items: flex-end; 
         text-align: right;
-        
-        /* Escondido por padrão (deslocado para cima) */
         opacity: 0;
         transform: translateY(-20px);
         pointer-events: none;
         transition: all 0.3s ease-in-out;
     }
 
-
-    /* Classe que o JavaScript vai ativar para mostrar o menu */
     .nav-links.active {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
     }
 
-    /* Animação dos 3 traços a transformarem-se num "X" ao abrir */
+    /* Animação do X */
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
         background-color: var(--accent);
@@ -276,51 +267,32 @@ footer {
     .hero h1 { font-size: 2.3rem; }
 }
 
-/* Ocultar o botão hambúrguer em computadores/ecrãs grandes */
-@media (max-width: 768px) {
-    /* Ativar e estilizar o botão dos 3 traços */
+/* Ocultar o botão hambúrguer em computadores */
+@media (min-width: 769px) {
     .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 21px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 1001;
-        
-        /* ISTO EMPURRA O BOTÃO PARA A DIREITA */
-        margin-left: auto; 
+        display: none;
     }
+}
 
-/* Barra fixa no fundo do ecrã */
+/* Barra fixa de áudio no fundo do ecrã */
 .audio-player-fixed {
     position: fixed;
-    bottom: 0;       /* Alinha colado ao fundo da janela */
-    left: 0;         /* Alinha à esquerda */
-    width: 100%;     /* Ocupa toda a largura do ecrã */
-    background: #151c2c; /* Fundo azul com ligeira transparência */
-    backdrop-filter: blur(10px);          /* Efeito de vidro fosco (moderno) */
-    /* Se a cor de fundo for ESCURA, use #ffffff para o texto. Se for CLARA, use #1a1a1a */
+    bottom: 0;       
+    left: 0;         
+    width: 100%;     
+    background: #151c2c; 
+    backdrop-filter: blur(10px);          
     color: #ffffff; 
-    
-    /* Reduzido de 12px para 6px para tornar a barra muito mais fina */
-    padding: 6px 24px; 
-    
-    /* Linha divisória subtil (opcional - pode apagar se não gostar) */
+    padding: 12px 8%; 
     border-top: 1px solid rgba(255, 255, 255, 0.1); 
-    
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Agrupamento dos textos */
 .audio-info {
     flex: 1;
     margin-right: 20px;
@@ -329,37 +301,31 @@ footer {
 .audio-fixed-title {
     font-size: 0.9rem;
     font-weight: 600;
-    color: inherit; /* 'inherit' faz o título herdar a cor (branca ou escura) definida acima */
+    color: inherit; 
     margin: 0;
 }
 
 .audio-fixed-subtitle {
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.7); /* Texto secundário ligeiramente transparente */
+    color: rgba(255, 255, 255, 0.7); 
     margin: 0;
     text-transform: uppercase;
 }
 
-/* Ajuste do elemento áudio para ecrãs maiores */
 .audio-player-fixed audio {
     width: 100%;
-    max-width: 500px; /* Impede que o player fique demasiado esticado */
+    max-width: 450px; 
 }
 
-/* Margem de segurança para o rodapé da sua página não ficar tapado pelo player */
-body {
-    padding-bottom: 50px; 
-}
-
-/* Adaptação para telemóveis: empilha o texto e o player verticalmente se o ecrã for pequeno */
 @media (max-width: 600px) {
+    body { padding-bottom: 140px; }
     .audio-player-fixed {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 10px 16px;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 12px 16px;
     }
-    .audio-player-fixed audio {
-        max-width: 100%;
-    }
+    .audio-info { margin-right: 0; }
+    .audio-player-fixed audio { max-width: 100%; }
 }
