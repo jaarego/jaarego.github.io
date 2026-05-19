@@ -201,7 +201,7 @@ footer {
 }
 
 /* Responsividade Mobile e Menu Hambúrguer */
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -268,7 +268,7 @@ footer {
 }
 
 /* Ocultar o botão hambúrguer em computadores */
-@media (min-width: 961px) {
+@media (min-width: 1025px) {
     .menu-toggle {
         display: none;
     }
