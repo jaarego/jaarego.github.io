@@ -77,8 +77,10 @@
             <p class="subtitle">Fique por dentro das nossas produções e dicas de áudio</p>
             
             <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: 0 auto;">
-                <!-- limita o número de posts exibidos a 10, para todos os posts  usar {% for post in site.posts %}
--->
+                {% comment %} 
+                Limita o número de posts exibidos a 10. 
+                Para mostrar todos, use: {% for post in site.posts %}
+                {% endcomment %}
                 {% for post in site.posts limit: 10 %}
                     <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent);">
                         <span style="color: var(--accent); font-size: 0.8rem;">{{ post.date | date: "%d/%m/%Y" }}</span>
