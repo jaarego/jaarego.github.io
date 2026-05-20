@@ -8,13 +8,19 @@
 </head>
 <body>
 
-    <!-- Pode copiar a sua barra de navegação idêntica aqui se desejar -->
-
     <main style="padding: 8rem 8%; max-width: 800px; margin: 0 auto;">
         <a href="{{ '/' | relative_url }}" style="color: var(--accent); text-decoration: none;">&larr; Voltar ao Início</a>
         <h1 style="margin-top: 2rem; font-size: 3rem;">{{ page.title }}</h1>
         <p style="color: var(--text-muted); margin-bottom: 3rem;">Publicado em: {{ page.date | date: "%d/%m/%Y" }}</p>
         
+        {% if page.image %}
+          <img 
+            src="{{ page.image }}" 
+            alt="{{ page.title }}" 
+            style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 16px; margin-bottom: 2rem;"
+          >
+        {% endif %}
+
         <div class="post-content">
             {{ content }}
         </div>
