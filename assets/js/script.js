@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-list');
+    const menuToggle = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("nav-list");
 
     if (menuToggle && navLinks) {
-        // Abre ou fecha o menu ao clicar nos 3 traços
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.toggle("active");
+            navLinks.classList.toggle("active");
+
+            const isOpen = navLinks.classList.contains("active");
+            menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
         });
 
-        // Fecha o menu automaticamente quando clica num link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                menuToggle.classList.remove("active");
+                navLinks.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
             });
         });
     }
