@@ -89,7 +89,21 @@
 .portfolio-item:hover,
 .post-card:hover,
 .highlight-card:hover {
-    /* Levanta o cartão 6px do ecrã para dar sensação de elevação */
+    /* Levanta ligeiramente o cartão */
     transform: translateY(-6px);
 
-    /* Borda mais visível, com cor de 
+    /* Borda com tom de destaque */
+    border-color: rgba(0, 210, 255, 0.22);
+
+    /* Sombra mais forte no hover */
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+
+    /* Fundo ligeiramente mais claro no hover */
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 255, 255, 0.03)
+        ),
+        var(--bg-card);
+}
