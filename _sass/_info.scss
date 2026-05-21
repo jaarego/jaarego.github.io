@@ -1,20 +1,45 @@
+/* -------------------------------------------------
+   SECÇÃO "QUEM SOMOS"
+   Espaçamento exterior da secção.
+   Não forçamos um fundo novo para não quebrar
+   as cores já existentes no resto do site.
+------------------------------------------------- */
 .about-section {
-  padding: 90px 20px;
+  padding: 100px 20px;
+  color: inherit; /* Herda a cor base do texto do site */
+  background: transparent; /* Mantém a secção integrada no layout atual */
 }
 
+/* -------------------------------------------------
+   CONTENTOR PRINCIPAL
+   Centraliza o conteúdo e cria duas colunas:
+   - esquerda: texto institucional
+   - direita: cartões com destaques
+------------------------------------------------- */
 .about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.35fr 0.95fr;
-  gap: 42px;
-  align-items: start;
+  max-width: 1200px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centra horizontalmente */
+  display: grid; /* Ativa o layout em grelha */
+  grid-template-columns: 1.35fr 0.95fr; /* Texto maior à esquerda, destaques à direita */
+  gap: 42px; /* Espaço entre as colunas */
+  align-items: start; /* Alinha tudo ao topo */
 }
 
+/* -------------------------------------------------
+   BLOCO DE TEXTO PRINCIPAL
+   Limita a largura para o texto respirar melhor
+   e ser mais confortável de ler.
+------------------------------------------------- */
 .about-content {
   max-width: 760px;
 }
 
+/* -------------------------------------------------
+   EYEBROW / PRÉ-TÍTULO
+   Pequeno rótulo acima do título principal.
+   Usa cor herdada para combinar com o site,
+   mas com opacidade menor para não competir.
+------------------------------------------------- */
 .about-eyebrow {
   display: inline-block;
   margin-bottom: 14px;
@@ -26,81 +51,132 @@
   opacity: 0.75;
 }
 
+/* -------------------------------------------------
+   TÍTULO PRINCIPAL DA SECÇÃO
+   Título responsivo com clamp para ajustar
+   entre mobile e desktop sem quebra brusca.
+------------------------------------------------- */
 .about-title {
   margin: 0 0 24px;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
   font-weight: 800;
-  color: inherit;
+  color: inherit; /* Mantém a mesma linguagem cromática do site */
 }
 
+/* -------------------------------------------------
+   PARÁGRAFOS DO TEXTO
+   Define leitura confortável e tom visual
+   ligeiramente mais suave do que o título.
+------------------------------------------------- */
 .about-text {
   margin: 0 0 18px;
   font-size: 1.05rem;
   line-height: 1.8;
   color: inherit;
-  opacity: 0.88;
+  opacity: 0.88; /* Suaviza o texto sem o apagar demasiado */
 }
 
+/* -------------------------------------------------
+   COLUNA DOS DESTAQUES
+   Empilha os cartões com espaçamento regular.
+------------------------------------------------- */
 .about-highlights {
   display: grid;
-  gap: 16px;
+  gap: 18px;
 }
 
+/* -------------------------------------------------
+   CARTÃO DE DESTAQUE
+   Aqui está a "mistura" que pediste:
+   - a secção geral continua transparente
+   - mas cada cartão mantém o efeito visual
+     rico da primeira versão
+   Isto devolve presença, volume e contraste.
+------------------------------------------------- */
 .highlight-card {
-  padding: 22px 24px;
-  border-radius: 16px;
-  border: 1px solid currentColor;
-  opacity: 0.92;
-  background: transparent;
+  padding: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.04)
+  ); /* Fundo subtil com leve profundidade */
+  border: 1px solid rgba(255, 255, 255, 0.10); /* Borda suave */
+  border-radius: 18px; /* Cantos arredondados */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16); /* Sombra discreta */
+  backdrop-filter: blur(6px); /* Efeito vidro suave */
+  -webkit-backdrop-filter: blur(6px); /* Suporte Safari */
 }
 
+/* -------------------------------------------------
+   NÚMERO DO CARTÃO
+   Ex.: 01, 02, 03
+   Dá ritmo e hierarquia visual aos destaques.
+------------------------------------------------- */
 .highlight-number {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.14em;
+  color: inherit;
   opacity: 0.65;
 }
 
+/* -------------------------------------------------
+   TÍTULO DE CADA CARTÃO
+   Elemento principal dentro da caixa.
+------------------------------------------------- */
 .highlight-card h3 {
   margin: 0 0 10px;
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: inherit;
 }
 
+/* -------------------------------------------------
+   TEXTO DE APOIO DE CADA CARTÃO
+   Um pouco mais leve para criar hierarquia.
+------------------------------------------------- */
 .highlight-card p {
   margin: 0;
-  font-size: 0.97rem;
+  font-size: 0.98rem;
   line-height: 1.7;
   color: inherit;
   opacity: 0.8;
 }
 
+/* -------------------------------------------------
+   RESPONSIVO - TABLET E ECRÃS MÉDIOS
+   As duas colunas passam para uma só.
+------------------------------------------------- */
 @media (max-width: 960px) {
   .about-container {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: 1fr; /* Tudo empilhado */
+    gap: 30px;
   }
 
   .about-section {
-    padding: 72px 20px;
+    padding: 72px 20px; /* Reduz o espaçamento vertical */
+  }
+
+  .about-title {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
   }
 }
 
+/* -------------------------------------------------
+   RESPONSIVO - MOBILE
+   Pequenos ajustes de leitura e densidade visual.
+------------------------------------------------- */
 @media (max-width: 640px) {
-  .about-title {
-    font-size: clamp(1.7rem, 7vw, 2.4rem);
-  }
-
-  .about-text,
-  .highlight-card p {
+  .about-text {
     font-size: 1rem;
+    line-height: 1.75;
   }
 
   .highlight-card {
     padding: 20px;
+    border-radius: 14px;
   }
 }
