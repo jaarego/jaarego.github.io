@@ -1,113 +1,49 @@
 /* =========================================================
    SERVIÇOS
-   Versão ajustada para ficar mais próxima do estilo
-   visual da secção "Quem somos", com mais profundidade,
-   melhor presença e cartões mais elegantes.
 ========================================================= */
 
 .grid-services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem; /* Espaço entre cartões */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-/* -------------------------------------------------
-   CARTÃO DE SERVIÇO
-   Mantém a base do teu layout, mas melhora:
-   - profundidade visual
-   - fundo com mais riqueza
-   - borda mais suave
-   - sombra mais elegante
-------------------------------------------------- */
 .service-card {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.02)
-    ),
-    var(--bg-card); /* Junta o fundo do projeto com uma camada subtil */
-  padding: 3rem 2rem;
-  border-radius: 18px; /* Mais próximo do estilo do "Quem somos" */
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.06); /* Borda mais discreta e premium */
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12); /* Sombra base suave */
-  backdrop-filter: blur(6px); /* Dá um toque mais refinado */
-  -webkit-backdrop-filter: blur(6px);
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
+    padding: 3rem 2rem;
+    text-align: center;
 }
 
-/* -------------------------------------------------
-   HOVER DO CARTÃO
-   Em vez de só subir, também ganha mais brilho
-   e presença, como nos cartões de destaque.
-------------------------------------------------- */
-.service-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(0, 210, 255, 0.22);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.07),
-      rgba(255, 255, 255, 0.03)
-    ),
-    var(--bg-card);
-}
-
-/* -------------------------------------------------
-   ÍCONE
-   Dá mais protagonismo ao ícone e separa-o melhor
-   do título. Mantém o centro visual do cartão.
-------------------------------------------------- */
 .service-card .icon {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  line-height: 1;
-  opacity: 0.95;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+    opacity: 0.95;
 }
 
-/* -------------------------------------------------
-   TÍTULO DO SERVIÇO
-   Mais peso visual para reforçar hierarquia.
-------------------------------------------------- */
 .service-card h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
-/* -------------------------------------------------
-   TEXTO DO SERVIÇO
-   Continua a usar a variável já existente no site.
-------------------------------------------------- */
 .service-card p {
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin: 0;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
 }
 
-/* -------------------------------------------------
-   RESPONSIVO - TABLET / MOBILE
-   Pequeno ajuste no padding e no raio para não
-   ficar demasiado pesado em ecrãs pequenos.
-------------------------------------------------- */
 @media (max-width: 640px) {
-  .service-card {
-    padding: 2.25rem 1.5rem;
-    border-radius: 14px;
-  }
+    .service-card {
+        padding: 2.25rem 1.5rem;
+        border-radius: 14px;
+    }
 
-  .service-card .icon {
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
-  }
+    .service-card .icon {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
 
-  .service-card h3 {
-    font-size: 1.1rem;
-  }
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
 }

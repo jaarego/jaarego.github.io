@@ -93,19 +93,11 @@
    - mas cada cartão mantém o efeito visual
      rico da primeira versão
    Isto devolve presença, volume e contraste.
+   usa a cor herdada para manter a consistência visual do site, 
+   mas com opacidade para criar um efeito de destaque sem ser muito pesado.
 ------------------------------------------------- */
 .highlight-card {
-  padding: 24px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.04)
-  ); /* Fundo subtil com leve profundidade */
-  border: 1px solid rgba(255, 255, 255, 0.10); /* Borda suave */
-  border-radius: 18px; /* Cantos arredondados */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16); /* Sombra discreta */
-  backdrop-filter: blur(6px); /* Efeito vidro suave */
-  -webkit-backdrop-filter: blur(6px); /* Suporte Safari */
+    padding: 24px;
 }
 
 /* -------------------------------------------------

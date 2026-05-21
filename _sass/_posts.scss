@@ -2,7 +2,6 @@
    POSTS / NOVIDADES
 ========================================================= */
 
-/* Listagem de posts na homepage */
 .posts-grid {
     display: flex;
     flex-direction: column;
@@ -12,16 +11,7 @@
 }
 
 .post-card {
-    background: var(--bg-card);
     padding: 2rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.post-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .post-card-date {
@@ -32,7 +22,7 @@
 }
 
 .post-card-title {
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0.75rem;
 }
 
 .post-card-title-link {
