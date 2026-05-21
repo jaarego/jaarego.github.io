@@ -1,0 +1,64 @@
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-nav {
+    background: transparent;
+    border: 2px solid var(--accent);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    color: var(--accent) !important;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-nav:hover,
+.btn-nav:focus-visible {
+    background: var(--accent);
+    color: var(--bg-dark) !important;
+}
+
+.btn-submit {
+    background: var(--accent);
+    color: var(--bg-dark);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus-visible {
+    opacity: 0.9;
+}

@@ -1,25 +1,28 @@
 <h2>Novidades do Estúdio</h2>
 <p class="subtitle">Fique por dentro das nossas produções e dicas de áudio</p>
 
-<div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; margin: 0 auto;">
-
+<div class="posts-grid">
     {% for post in site.posts limit: 10 %}
-    <div style="background: var(--bg-card); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent);">
-        <span style="color: var(--accent); font-size: 0.8rem;">{{ post.date | date: "%d/%m/%Y" }}</span>
-        <h3 style="margin: 0.5rem 0;">
-            <a href="{{ post.url | relative_url }}" style="color: white; text-decoration: none;">{{ post.title }}</a>
+    <article class="post-card">
+        <span class="post-card-date">{{ post.date | date: "%d/%m/%Y" }}</span>
+
+        <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}" class="post-card-title-link">
+                {{ post.title }}
+            </a>
         </h3>
-        <p style="color: var(--text-muted); font-size: 0.95rem;">
+
+        <p class="post-card-excerpt">
             {{ post.content | strip_html | truncatewords: 20 }}
         </p>
 
         {% if post.image %}
-        <img 
-            src="{{ post.image }}" 
-            alt="{{ post.title }}" 
-            style="width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-top: 1rem;"
+        <img
+            src="{{ post.image }}"
+            alt="{{ post.image_alt | default: post.title }}"
+            class="post-card-image"
         >
         {% endif %}
-    </div>
+    </article>
     {% endfor %}
 </div>

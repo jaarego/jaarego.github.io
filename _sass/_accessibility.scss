@@ -1,0 +1,17 @@
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.hidden-honeypot {
+    display: none !important;
+    visibility: hidden;
+}

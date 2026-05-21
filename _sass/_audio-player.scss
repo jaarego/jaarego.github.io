@@ -1,0 +1,45 @@
+/* =========================================================
+   LEITOR DE ÁUDIO FIXO
+========================================================= */
+
+.audio-player-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #151c2c;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 12px 8%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.audio-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.audio-fixed-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: inherit;
+    margin: 0;
+}
+
+.audio-fixed-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.audio-player-fixed audio {
+    width: 100%;
+    max-width: 450px;
+}
