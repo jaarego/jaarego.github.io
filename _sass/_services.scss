@@ -45,6 +45,13 @@
     color: var(--text-muted);
     line-height: 1.7;
     margin: 0;
+    max-width: 32ch;
+    margin-inline: auto;
+}
+
+/* Espaçamento entre parágrafos dentro dos cartões de serviço */
+.service-card p+p {
+    margin-top: 1rem;
 }
 
 /* -------------------------------------------------
