@@ -1,28 +1,61 @@
 /* =========================================================
    POSTS / NOVIDADES
-   Este ficheiro trata:
-   - cards da lista de novidades
-   - página individual de post
+   Este ficheiro trata duas áreas:
+   - a grelha de cartões da secção "Novidades"
+   - a página individual de cada post
+
+   A ideia é alinhar a secção de novidades com o resto
+   da homepage, usando uma grelha de cards em vez de uma
+   lista empilhada numa única coluna.
+
+   Nota útil
+    Se depois vires que alguns cards de novidades ficam com alturas 
+    muito diferentes por causa do tamanho do excerto, podemos no passo 
+    seguinte limitar o resumo com line-clamp. Essa técnica é frequentemente 
+    usada para manter alinhamento visual entre cards com textos de comprimentos diferentes.
 ========================================================= */
 
+
 /* -------------------------------------------------
-   LISTA DE POSTS
-   Empilha os cartões verticalmente ao centro.
+   GRELHA DE POSTS
+   Em desktop mostramos 3 colunas.
+   Em tablet reduzimos para 2.
+   Em mobile passa para 1.
+   
+   Isto mantém a secção consistente com o restante
+   padrão visual do site, que já usa cards em grelha.
 ------------------------------------------------- */
 .posts-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Card individual de post */
+
+/* -------------------------------------------------
+   CARD INDIVIDUAL DE POST
+   Cada card usa a base visual global definida em
+   _cards.scss; aqui ajustamos apenas o layout interno.
+   
+   display: flex + flex-direction: column ajuda a manter
+   a estrutura interna mais estável entre cards com
+   conteúdos ligeiramente diferentes.
+------------------------------------------------- */
 .post-card {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-/* Data do post */
+
+/* -------------------------------------------------
+   DATA DO POST
+   Texto pequeno acima do título para reforçar
+   contexto editorial e dar hierarquia à leitura.
+------------------------------------------------- */
 .post-card-date {
     display: inline-block;
     color: var(--accent);
@@ -30,43 +63,97 @@
     margin-bottom: 0.4rem;
 }
 
-/* Título do card */
+
+/* -------------------------------------------------
+   TÍTULO DO CARD
+   Espaçamento entre a data e o título, e depois
+   entre o título e o excerto.
+------------------------------------------------- */
 .post-card-title {
     margin: 0.5rem 0 0.75rem;
 }
 
-/* Link do título */
+
+/* -------------------------------------------------
+   LINK DO TÍTULO
+   O título do post é clicável.
+   Mantemos um hover simples e coerente com o site.
+------------------------------------------------- */
 .post-card-title-link {
     color: var(--text-main);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Hover/foco do título */
 .post-card-title-link:hover,
 .post-card-title-link:focus-visible {
     color: var(--accent);
 }
 
-/* Resumo/excerto */
+
+/* -------------------------------------------------
+   EXCERTO / RESUMO
+   Pequeno texto introdutório do post.
+   Mantemos boa legibilidade com line-height confortável.
+------------------------------------------------- */
 .post-card-excerpt {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
-/* Imagem do card */
+
+/* -------------------------------------------------
+   IMAGEM DO CARD
+   A imagem ajuda a dar presença visual ao conteúdo
+   e aproxima esta secção do padrão usado nas outras
+   áreas em grelha do site.
+------------------------------------------------- */
 .post-card-image {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     margin-top: 1rem;
     display: block;
 }
 
+
 /* -------------------------------------------------
+   RESPONSIVO - TABLET
+   Reduzimos a grelha para 2 colunas em larguras
+   intermédias para manter legibilidade e equilíbrio.
+------------------------------------------------- */
+@media (max-width: 960px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* -------------------------------------------------
+   RESPONSIVO - MOBILE
+   Em ecrãs pequenos passamos para uma coluna.
+   Isto evita cards demasiado estreitos.
+------------------------------------------------- */
+@media (max-width: 640px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
    PÁGINA INDIVIDUAL DO POST
+   Estilos usados quando o utilizador abre um post
+   específico fora da homepage.
+========================================================= */
+
+
+/* -------------------------------------------------
+   ÁREA EXTERIOR DA PÁGINA DO POST
+   Define o espaçamento geral e limita a largura
+   máxima para leitura confortável.
 ------------------------------------------------- */
 .post-page {
     padding: 8rem 8%;
@@ -74,10 +161,21 @@
     margin: 0 auto;
 }
 
+
+/* -------------------------------------------------
+   CONTENTOR DO POST
+   Garante que o artigo ocupa a largura disponível
+   dentro da área limitada.
+------------------------------------------------- */
 .post-container {
     width: 100%;
 }
 
+
+/* -------------------------------------------------
+   LINK DE REGRESSO
+   Link que permite voltar à homepage.
+------------------------------------------------- */
 .post-back-link {
     display: inline-block;
     margin-bottom: 2rem;
@@ -92,17 +190,31 @@
     opacity: 0.85;
 }
 
+
+/* -------------------------------------------------
+   TÍTULO PRINCIPAL DO POST
+------------------------------------------------- */
 .post-title {
     margin-top: 2rem;
     font-size: 3rem;
     line-height: 1.2;
 }
 
+
+/* -------------------------------------------------
+   META INFORMAÇÃO
+   Linha usada para data de publicação.
+------------------------------------------------- */
 .post-meta {
     color: var(--text-muted);
     margin-bottom: 3rem;
 }
 
+
+/* -------------------------------------------------
+   IMAGEM DESTACADA DO POST
+   Imagem principal mostrada no topo da página.
+------------------------------------------------- */
 .post-featured-image {
     width: 100%;
     max-height: 500px;
@@ -112,10 +224,22 @@
     display: block;
 }
 
-.post-content > * + * {
+
+/* -------------------------------------------------
+   FLUXO DO CONTEÚDO
+   Cria espaçamento automático entre elementos
+   consecutivos dentro do conteúdo do post.
+------------------------------------------------- */
+.post-content>*+* {
     margin-top: 1.25rem;
 }
 
+
+/* -------------------------------------------------
+   TÍTULOS DENTRO DO CONTEÚDO
+   Ao contrário dos títulos de secção da homepage,
+   dentro do post devem ficar alinhados à esquerda.
+------------------------------------------------- */
 .post-content h2,
 .post-content h3,
 .post-content h4 {
@@ -124,22 +248,43 @@
     margin-bottom: 0.75rem;
 }
 
+
+/* -------------------------------------------------
+   TEXTO E LISTAS
+   Mantém a cor principal para boa legibilidade.
+------------------------------------------------- */
 .post-content p,
 .post-content li {
     color: var(--text-main);
 }
 
+
+/* -------------------------------------------------
+   LISTAS
+   Reintroduz recuo lateral para bullets e números.
+------------------------------------------------- */
 .post-content ul,
 .post-content ol {
     padding-left: 1.5rem;
 }
 
+
+/* -------------------------------------------------
+   LINKS DENTRO DO POST
+   Mantêm destaque através da cor accent e underline.
+------------------------------------------------- */
 .post-content a {
     color: var(--accent);
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
+
+/* -------------------------------------------------
+   IMAGENS DENTRO DO CONTEÚDO
+   Garante que imagens inseridas no corpo do post
+   se adaptam à largura do contentor.
+------------------------------------------------- */
 .post-content img {
     width: 100%;
     height: auto;
