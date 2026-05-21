@@ -1,34 +1,134 @@
 /* =========================================================
    CONTACTO
-   Secção e formulário de contacto do site.
+   Esta secção junta duas áreas principais:
+   - informação direta de contacto
+   - formulário de contacto
+
+   A ideia é tornar a secção mais completa e alinhada
+   com a linguagem visual de cards usada no resto do site.
 ========================================================= */
 
-/* Fundo da secção de contacto */
+
+/* -------------------------------------------------
+   SECÇÃO DE CONTACTO
+   Mantém o fundo base da área de contacto.
+------------------------------------------------- */
 .contact {
     background: var(--bg-card);
 }
 
-/* Contentor principal */
-.contact-container {
-    max-width: 600px;
+
+/* -------------------------------------------------
+   LAYOUT PRINCIPAL
+   Organiza a secção em duas colunas:
+   - esquerda: dados de contacto
+   - direita: formulário
+------------------------------------------------- */
+.contact-layout {
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 2rem;
+    align-items: start;
 }
 
-/* Texto de apoio */
-.contact-container p {
+
+/* -------------------------------------------------
+   CARTÕES DA SECÇÃO DE CONTACTO
+   Aplicamos uma base visual coerente com o sistema
+   de cards do resto do site.
+------------------------------------------------- */
+.contact-info-card,
+.contact-form-card {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.02)
+        ),
+        var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+
+/* -------------------------------------------------
+   TEXTO INTRODUTÓRIO
+------------------------------------------------- */
+.contact-info-card p {
     color: var(--text-muted);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
-/* Formulário */
+
+/* -------------------------------------------------
+   LISTA DE CONTACTOS
+------------------------------------------------- */
+.contact-details {
+    display: grid;
+    gap: 1.5rem;
+}
+
+
+/* Bloco individual de contacto */
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+
+/* Pequeno rótulo acima do valor */
+.contact-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+
+/* Link clicável para telefone e email */
+.contact-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+    color: var(--accent);
+}
+
+
+/* Texto simples, usado na morada/localização */
+.contact-text {
+    color: var(--text-main);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* -------------------------------------------------
+   FORMULÁRIO
+------------------------------------------------- */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
-/* Campos de input e textarea */
+
+/* Campos do formulário */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -40,15 +140,28 @@
     font-size: 1rem;
 }
 
-/* Texto placeholder */
+
+/* Placeholder */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: var(--text-muted);
 }
 
-/* Estado de foco */
+
+/* Foco dos campos */
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent);
+}
+
+
+/* -------------------------------------------------
+   RESPONSIVO
+   Em ecrãs mais pequenos, passamos para uma coluna.
+------------------------------------------------- */
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
 }
