@@ -1,63 +1,202 @@
 /* =========================================================
    BOTÕES
+   Este ficheiro contém os estilos base para os botões
+   e ligações que funcionam como botões em todo o site.
+   
+   Tipos de botão:
+   - .btn-primary      → botão principal (CTA forte)
+   - .btn-secondary    → botão secundário (outline)
+   - .btn-nav          → botão dentro da navbar
+   - .btn-submit       → botão de envio de formulário
 ========================================================= */
 
+
+/* -------------------------------------------------
+   BASE COMUM PARA BOTÕES PRINCIPAIS E SECUNDÁRIOS
+   Aqui definimos o que é igual para ambos:
+   - espaçamento interno (padding)
+   - cantos arredondados
+   - sem sublinhado (para ser usado em <a> também)
+   - texto mais forte (font-weight)
+   - transição suave para hover/focus
+------------------------------------------------- */
 .btn-primary,
 .btn-secondary {
+    /* 
+       Padding generator compõe o espaço interno:
+       - 0.8rem vertical (topo/fundo)
+       - 2rem horizontal (esquerda/direita)
+       Isto dá um botão confortável e visível.
+    */
     padding: 0.8rem 2rem;
+
+    /* Cantos levemente arredondados, mas não excessivos */
     border-radius: 4px;
+
+    /* Remove sublinhado se usado em links (<a>) */
     text-decoration: none;
+
+    /* Texto mais forte para dar destaque como ação principal */
     font-weight: 600;
+
+    /* Transição suave para mudança de cor, fundo, opacidade, etc. */
     transition: 0.3s ease;
 }
 
+
+/* -------------------------------------------------
+   BOTÃO PRINCIPAL (.btn-primary)
+   Este é o botão de ação principal do site,
+   por exemplo: "Iniciar Projeto", "Enviar Mensagem".
+   Deve chamar a atenção imediatamente.
+------------------------------------------------- */
 .btn-primary {
+    /* 
+       Fundo com a cor de destaque do site (accent).
+       Esta é a cor principal que guida o olhar do utilizador.
+    */
     background: var(--accent);
+
+    /* 
+       Texto na cor escura do site, para ter contraste
+       claro sobre o fundo mais brilhante do botão.
+    */
     color: var(--bg-dark);
 }
 
+/* 
+   Hover e foco do botão principal:
+   - reduzimos ligeiramente a opacidade para dar feedback
+   - não mexemos em cor nem fundo, só escurecemos um pouco
+*/
 .btn-primary:hover,
 .btn-primary:focus-visible {
     opacity: 0.9;
 }
 
+
+/* -------------------------------------------------
+   BOTÃO SECUNDÁRIO (.btn-secondary)
+   Este é um botão de ação alternativa, menos enfatizado.
+   Por exemplo: "Ouvir Portfólio" ao lado de "Iniciar Projeto".
+   Tem um visual mais subtil, quase outline.
+------------------------------------------------- */
 .btn-secondary {
+    /* 
+       Borda fina e semi-transparente, sem fundo sólido.
+       Cria um botão "outline", mais discreto.
+    */
     border: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* 
+       Texto na cor principal do site,
+       para ser legível sobre o fundo escuro.
+    */
     color: var(--text-main);
 }
 
+/* 
+   Hover e foco do botão secundário:
+   - adicionamos um fundo muito subtil para dar feedback
+   - o texto mantém a mesma cor
+*/
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
     background: rgba(255, 255, 255, 0.05);
 }
 
+
+/* -------------------------------------------------
+   BOTÃO DA NAVBAR (.btn-nav)
+   Este é o botão especial dentro da barra de navegação,
+   por exemplo: "Orçamento".
+   Tem um estilo diferente para se destacar no menu.
+------------------------------------------------- */
 .btn-nav {
+    /* Sem fundo sólido inicialmente */
     background: transparent;
+
+    /* 
+       Borda mais visível (2px) com a cor de destaque.
+       Isto faz o botão "saltar" no menu.
+    */
     border: 2px solid var(--accent);
+
+    /* Padding um pouco mais compacto para caber bem no menu */
     padding: 0.5rem 1.2rem;
+
+    /* Cantos arredondados, igual aos outros botões */
     border-radius: 4px;
+
+    /* 
+       Texto na cor de destaque.
+       O !important aqui é para garantir que o texto
+       mantém esta cor mesmo se houver outras regras de cor em <a>.
+    */
     color: var(--accent) !important;
+
+    /* 
+       Transição específica para:
+       - fundo
+       - cor do texto
+       - cor da borda
+       Todas com 0.3s e easing "ease".
+    */
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* 
+   Hover e foco do botão da navbar:
+   - fundo passa a ser a cor de destaque
+   - texto fica escuro para contraste
+   - novamente usamos !important para garantir a cor
+*/
 .btn-nav:hover,
 .btn-nav:focus-visible {
     background: var(--accent);
     color: var(--bg-dark) !important;
 }
 
+
+/* -------------------------------------------------
+   BOTÃO DE SUBMIT DO FORMULÁRIO (.btn-submit)
+   Este é o botão "Enviar Mensagem" no formulário de contacto.
+   Deve ser muito claro como ação principal.
+------------------------------------------------- */
 .btn-submit {
+    /* Fundo com a cor de destaque do site */
     background: var(--accent);
+
+    /* Texto escuro para contraste */
     color: var(--bg-dark);
+
+    /* Sem borda, para ser mais limpo e direto */
     border: none;
+
+    /* Padding generoso para o botão ser confortável de clicar */
     padding: 1rem;
+
+    /* Tamanho de texto base, confortável para leitura */
     font-size: 1rem;
+
+    /* Peso de fonte mais elevado, para chamar atenção */
     font-weight: 700;
+
+    /* Cantos arredondados iguais aos outros botões */
     border-radius: 4px;
+
+    /* Cursor de mão para indicar que é clicável */
     cursor: pointer;
+
+    /* Transição suave para opacidade no hover/focus */
     transition: opacity 0.3s ease;
 }
 
+/* 
+   Hover e foco do botão de envio:
+   - reduzimos ligeiramente a opacidade para dar feedback visual
+   - igual ao botão primário, simplicidade e clareza
+*/
 .btn-submit:hover,
 .btn-submit:focus-visible {
     opacity: 0.9;

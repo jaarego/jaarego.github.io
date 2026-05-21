@@ -1,7 +1,11 @@
 /* =========================================================
-   RESPONSIVIDADE
+   RESPONSIVO
+   Ajustes para tablet, mobile e comportamento do menu.
 ========================================================= */
 
+/* -------------------------------------------------
+   TABLET / ECRÃS MÉDIOS
+------------------------------------------------- */
 @media (max-width: 1024px) {
     .navbar {
         padding: 1rem 5%;
@@ -9,8 +13,8 @@
     }
 
     .logo img {
-        height: 40px;
-        max-width: 180px;
+        height: 32px;
+        max-width: 160px;
     }
 
     .menu-toggle {
@@ -90,22 +94,22 @@
     .hero p {
         font-size: 1rem;
     }
-
-    .post-page {
-        padding: 6rem 5%;
-    }
-
-    .post-title {
-        font-size: 2.3rem;
-    }
 }
 
+/* -------------------------------------------------
+   DESKTOP
+   Garante que o botão hamburguer não aparece.
+------------------------------------------------- */
 @media (min-width: 1025px) {
     .menu-toggle {
         display: none;
     }
 }
 
+/* -------------------------------------------------
+   MOBILE PEQUENO
+   Ajustes ao player fixo e espaço do body.
+------------------------------------------------- */
 @media (max-width: 600px) {
     body {
         padding-bottom: 140px;
@@ -125,17 +129,5 @@
 
     .audio-player-fixed audio {
         max-width: 100%;
-    }
-
-    .post-card {
-        padding: 1.5rem;
-    }
-
-    .post-title {
-        font-size: 1.9rem;
-    }
-
-    .post-featured-image {
-        max-height: 280px;
     }
 }

@@ -3,45 +3,93 @@
    Base visual reutilizável para todos os cartões do site.
    A ideia é centralizar aqui o aspeto comum e depois
    deixar cada secção apenas com pequenas diferenças.
+   
+   Classes afetadas:
+   - .card            → base genérica
+   - .service-card    → cartões de serviços
+   - .portfolio-item  → itens do portfólio
+   - .post-card       → cards de novos posts
+   - .highlight-card  → destaques de "Quem somos"
 ========================================================= */
 
+
+/* -------------------------------------------------
+   ASPECTO COMUM DE TODOS OS CARTÕES
+   Aqui definimos tudo o que é igual para todos:
+   - fundo com gradiente subtil + variável do site
+   - borda suave, semi-transparente
+   - cantos arredondados
+   - sombra inicial para dar profundidade
+   - transições suaves para animações de hover
+   - efeito de vidro (backdrop-filter) para suavizar o fundo
+------------------------------------------------- */
 .card,
 .service-card,
 .portfolio-item,
 .post-card,
 .highlight-card {
+    /* 
+       Fundo composto:
+       - gradiente vertical subtil (de mais claro para mais escuro)
+       - sobreposto à cor de fundo base do site (--bg-card)
+       Isto cria profundidade sem ser muito aparente.
+    */
     background:
         linear-gradient(
             180deg,
-            rgba(255, 255, 255, 0.05),
-            rgba(255, 255, 255, 0.02)
+            rgba(255, 255, 255, 0.05),   // topo mais claro
+            rgba(255, 255, 255, 0.02)    // base mais escura
         ),
-        var(--bg-card);
+        var(--bg-card);                  // cor base do site
+
+    /* Borda fina e quase impercetível, ajustada para o tema escuro */
     border: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Cantos arredondados para um visual moderno e suave */
     border-radius: 18px;
+
+    /* Sombra inicial para dar "elevação" ao cartão */
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+
+    /*
+       Transições suaves para:
+       - movimento ao passar o rato (transform)
+       - cor da borda (border-color)
+       - sombra (box-shadow)
+       - fundo (background)
+       Todas com duração de 0.3s e easing "ease".
+    */
     transition:
         transform 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease,
         background 0.3s ease;
+
+    /*
+       Efeito de vidro (blur) para suavizar o que está atrás do cartão.
+       Útil quando há gradientes ou fundos com algum contraste.
+       -webkit-backdrop-filter para suporte no Safari.
+    */
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
 }
 
+
+/* -------------------------------------------------
+   ESTADO HOVER (Passar o rato por cima)
+   Quando o utilizador passa o rato, o cartão:
+   - sobe um pouco (transform translateY)
+   - ganha uma borda mais visível com cor de destaque
+   - a sombra torna-se mais forte, dando mais profundidade
+   - o fundo fica um pouco mais claro
+   Isso cria um efeito de "cartão a levantar" e a ganhar destaque.
+------------------------------------------------- */
 .card:hover,
 .service-card:hover,
 .portfolio-item:hover,
 .post-card:hover,
 .highlight-card:hover {
+    /* Levanta o cartão 6px do ecrã para dar sensação de elevação */
     transform: translateY(-6px);
-    border-color: rgba(0, 210, 255, 0.22);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.07),
-            rgba(255, 255, 255, 0.03)
-        ),
-        var(--bg-card);
-}
+
+    /* Borda mais visível, com cor de 

@@ -1,17 +1,38 @@
 /* =========================================================
    ACESSIBILIDADE
+   Este ficheiro melhora a usabilidade para navegação
+   por teclado e mantém elementos invisíveis realmente ocultos.
 ========================================================= */
 
+/* -------------------------------------------------
+   FOCO VISÍVEL
+   Garante que links, botões e campos de formulário
+   mostram um contorno visível quando recebem foco por teclado.
+   Isto é essencial para acessibilidade.
+------------------------------------------------- */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
+    /* Contorno com a cor de destaque do site */
     outline: 2px solid var(--accent);
+
+    /* Distância entre o contorno e o elemento */
     outline-offset: 3px;
+
+    /* Suaviza os cantos do contorno */
     border-radius: 4px;
 }
 
+/* -------------------------------------------------
+   HONEYPOT INVISÍVEL
+   Campo anti-spam escondido visualmente.
+   É usado para apanhar bots sem afetar utilizadores reais.
+------------------------------------------------- */
 .hidden-honeypot {
+    /* Oculta completamente o elemento */
     display: none !important;
+
+    /* Garante invisibilidade adicional */
     visibility: hidden;
 }

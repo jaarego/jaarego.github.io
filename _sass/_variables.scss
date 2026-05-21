@@ -1,11 +1,42 @@
 /* =========================================================
    VARIÁVEIS GLOBAIS
+   Este ficheiro centraliza as cores principais do site.
+   A vantagem é simples:
+   - se quiseres mudar a identidade visual,
+     mudas aqui e atualiza em todo o projeto;
+   - evita repetir cores "hardcoded" em vários ficheiros;
+   - mantém consistência visual entre secções.
 ========================================================= */
 
 :root {
+    /* 
+       Cor de fundo principal do site.
+       É o tom escuro dominante usado no body e em várias secções.
+    */
     --bg-dark: #0b0f19;
+
+    /* 
+       Cor base para caixas, cartões e superfícies secundárias.
+       Dá contraste em relação ao fundo principal.
+    */
     --bg-card: #151c2c;
+
+    /* 
+       Cor de destaque do projeto.
+       Usada em botões principais, links importantes,
+       estados de hover e detalhes visuais.
+    */
     --accent: #00d2ff;
+
+    /* 
+       Cor principal do texto.
+       É a cor mais clara, usada para conteúdo prioritário.
+    */
     --text-main: #f8fafc;
+
+    /* 
+       Cor secundária do texto.
+       Usada em subtítulos, descrições e texto de apoio.
+    */
     --text-muted: #94a3b8;
 }

@@ -1,27 +1,46 @@
 /* =========================================================
    HERO
+   Secção inicial de destaque da homepage.
+   Aqui vive a primeira mensagem forte da marca,
+   com título, texto e botões principais.
 ========================================================= */
 
+/* -------------------------------------------------
+   BLOCO HERO
+   Ocupa grande parte do ecrã para causar impacto inicial.
+------------------------------------------------- */
 .hero {
+    /* Altura visual dominante */
     height: 90vh;
+
+    /* Centro vertical e horizontal */
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* Texto centrado */
     text-align: center;
+
+    /* Espaço lateral interno */
     padding: 0 2rem;
+
+    /* Fundo com glow subtil no centro */
     background: radial-gradient(circle at center, rgba(0, 210, 255, 0.08) 0%, rgba(11, 15, 25, 1) 70%);
 }
 
+/* Título principal do hero */
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     font-weight: 800;
 }
 
+/* Palavra destacada dentro do título */
 .hero h1 span {
     color: var(--accent);
 }
 
+/* Texto de apoio do hero */
 .hero p {
     max-width: 600px;
     color: var(--text-muted);
@@ -29,6 +48,7 @@
     margin: 0 auto 2.5rem;
 }
 
+/* Área dos botões */
 .hero-buttons {
     display: flex;
     gap: 1rem;

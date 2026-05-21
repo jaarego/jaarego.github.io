@@ -1,7 +1,14 @@
 /* =========================================================
    POSTS / NOVIDADES
+   Este ficheiro trata:
+   - cards da lista de novidades
+   - página individual de post
 ========================================================= */
 
+/* -------------------------------------------------
+   LISTA DE POSTS
+   Empilha os cartões verticalmente ao centro.
+------------------------------------------------- */
 .posts-grid {
     display: flex;
     flex-direction: column;
@@ -10,10 +17,12 @@
     margin: 0 auto;
 }
 
+/* Card individual de post */
 .post-card {
     padding: 2rem;
 }
 
+/* Data do post */
 .post-card-date {
     display: inline-block;
     color: var(--accent);
@@ -21,27 +30,32 @@
     margin-bottom: 0.4rem;
 }
 
+/* Título do card */
 .post-card-title {
     margin: 0.5rem 0 0.75rem;
 }
 
+/* Link do título */
 .post-card-title-link {
     color: var(--text-main);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* Hover/foco do título */
 .post-card-title-link:hover,
 .post-card-title-link:focus-visible {
     color: var(--accent);
 }
 
+/* Resumo/excerto */
 .post-card-excerpt {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
+/* Imagem do card */
 .post-card-image {
     width: 100%;
     height: 160px;
@@ -51,7 +65,9 @@
     display: block;
 }
 
-/* Página individual do post */
+/* -------------------------------------------------
+   PÁGINA INDIVIDUAL DO POST
+------------------------------------------------- */
 .post-page {
     padding: 8rem 8%;
     max-width: 800px;

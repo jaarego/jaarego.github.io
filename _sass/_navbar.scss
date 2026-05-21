@@ -1,38 +1,90 @@
 /* =========================================================
    NAVBAR
+   Este ficheiro controla a barra de navegação principal:
+   - posicionamento horizontal
+   - espaçamento
+   - logo
+   - links
+   - botão do menu mobile (base desktop)
 ========================================================= */
 
+/* -------------------------------------------------
+   BARRA PRINCIPAL
+   Mantém logo e navegação alinhados numa linha,
+   com fundo translúcido e efeito de blur.
+------------------------------------------------- */
 .navbar {
+    /* Layout horizontal */
     display: flex;
+
+    /* Espaço entre logo e navegação */
     justify-content: space-between;
+
+    /* Alinhamento vertical ao centro */
     align-items: center;
+
+    /* Espaçamento interno da navbar */
     padding: 0.9rem 8%;
+
+    /* Fundo semi-transparente */
     background: rgba(11, 15, 25, 0.85);
+
+    /* Efeito vidro / blur */
     backdrop-filter: blur(12px);
+
+    /* Mantém a navbar fixa ao topo ao fazer scroll */
     position: sticky;
     top: 0;
+
+    /* Garante que fica acima do resto */
     z-index: 1000;
+
+    /* Linha subtil de separação */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Espaço mínimo entre blocos internos */
     gap: 1.5rem;
 }
 
+/* -------------------------------------------------
+   LOGÓTIPO
+   O link do logo funciona como ponto de regresso à home.
+------------------------------------------------- */
 .logo {
+    /* Permite alinhar bem a imagem */
     display: inline-flex;
+
+    /* Alinhamento vertical */
     align-items: center;
+
+    /* Remove sublinhado do link */
     text-decoration: none;
+
+    /* Impede que o logo encolha demasiado */
     flex-shrink: 0;
 }
 
+/* Imagem do logótipo */
 .logo img {
-    height: 48px;
+    /* Altura base do logo em desktop */
+    height: 44px;
+
+    /* Mantém proporção correta */
     width: auto;
-    max-width: 200px;
+
+    /* Limite máximo de largura */
+    max-width: 210px;
 }
 
+/* -------------------------------------------------
+   NAVEGAÇÃO
+   Empurra a navegação para a direita.
+------------------------------------------------- */
 .navbar nav {
     margin-left: auto;
 }
 
+/* Lista de links da navbar */
 .nav-links {
     display: flex;
     list-style: none;
@@ -40,6 +92,7 @@
     gap: 2rem;
 }
 
+/* Links da navegação */
 .nav-links a {
     text-decoration: none;
     color: var(--text-muted);
@@ -47,11 +100,16 @@
     transition: color 0.3s ease, opacity 0.3s ease;
 }
 
+/* Hover e foco dos links */
 .nav-links a:hover,
 .nav-links a:focus-visible {
     color: var(--text-main);
 }
 
+/* -------------------------------------------------
+   BOTÃO DO MENU MOBILE
+   Fica oculto em desktop e aparece no responsivo.
+------------------------------------------------- */
 .menu-toggle {
     display: none;
 }

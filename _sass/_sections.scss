@@ -1,23 +1,102 @@
 /* =========================================================
    SECÇÕES GERAIS
+   Este ficheiro contém estilos base para todas as secções
+   do site, e alguns elementos comuns como títulos e subtítulos.
+   
+   Estrutura:
+   - padding padrão para todas as secções
+   - estilo base para <h2> (títulos de secção)
+   - estilo para .subtitle (subtítulo secundário)
+   - ajuste específico para a secção de blog
 ========================================================= */
 
+
+/* -------------------------------------------------
+   PADDING PADRÃO PARA TODAS AS SECÇÕES
+   Todas as <section> do site recebem este espaçamento:
+   - 6rem de padding no topo e baixo
+   - 8% de padding à esquerda e direita
+   Isto garante ritmo visual consistente entre secções.
+------------------------------------------------- */
 section {
+    /* 
+       Padding shorthand:
+       - 6rem vertical (topo e fundo)
+       - 8% horizontal (esquerda e direita)
+       O 8% garante que o espaçamento lateral é proporcional
+       ao tamanho do ecrã, mantendo consistência em mobile e desktop.
+    */
     padding: 6rem 8%;
 }
 
+
+/* -------------------------------------------------
+   TÍTULO SECUNDÁRIO (H2)
+   Este é o título principal de cada secção,
+   por exemplo: "Nossos Serviços", "Portfólio", "Novidades".
+   Deve ser bem visível e centralizado.
+------------------------------------------------- */
 h2 {
+    /* 
+       Tamanho de fonte grande para destacar o título da secção.
+       2.5rem é um bom tamanho para secções, sem ser exagerado.
+    */
     font-size: 2.5rem;
+
+    /* 
+       Texto centralizado para criar um eixo visual
+       que une toda a secção.
+    */
     text-align: center;
+
+    /* 
+       Pequena margem abaixo para separar o título
+       do subtítulo ou do conteúdo seguinte.
+       0.5rem é um espaço mínimo para "respirar".
+    */
     margin-bottom: 0.5rem;
 }
 
+
+/* -------------------------------------------------
+   SUBTÍTULO (.subtitle)
+   Este é o texto secundário que aparece logo abaixo
+   do título da secção, por exemplo:
+   "O que fazemos na SOUNDWAVE produções".
+   É mais subtil e não compete com o título.
+------------------------------------------------- */
 .subtitle {
+    /* 
+       Texto centralizado para alinhar com o título h2.
+    */
     text-align: center;
+
+    /* 
+       Cor mais subtil (muted) para dar hierarquia
+       e não competir com o título principal.
+    */
     color: var(--text-muted);
+
+    /* 
+       Margem inferior generosa para criar espaço
+       antes do conteúdo da secção (cards, grids, etc.).
+       4rem é um espaço que deixa a secção "respirar".
+    */
     margin-bottom: 4rem;
 }
 
+
+/* -------------------------------------------------
+   SECÇÃO DE BLOG (.blog)
+   Esta é uma regra específica para a secção de blog,
+   para garantir que o fundo é o mesmo que o resto do site.
+   Pode ser útil se houver outras secções com fundo diferente.
+------------------------------------------------- */
 .blog {
+    /* 
+       Fundo igual ao fundo escuro base do site.
+       Isto garante consistência visual e evita que
+       a secção de blog pareça separada do resto.
+    */
     background: var(--bg-dark);
 }

@@ -1,18 +1,31 @@
 /* =========================================================
    SERVIÇOS
+   Define a grelha de serviços e os ajustes específicos
+   do conteúdo interno dos cards desta secção.
+   A base visual do cartão já vem de _cards.scss.
 ========================================================= */
 
+/* -------------------------------------------------
+   GRELHA DE SERVIÇOS
+   Distribui os cartões de forma responsiva.
+------------------------------------------------- */
 .grid-services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
+/* -------------------------------------------------
+   CARTÃO DE SERVIÇO
+   Aqui só ajustamos o layout interno,
+   porque a aparência base já está unificada.
+------------------------------------------------- */
 .service-card {
     padding: 3rem 2rem;
     text-align: center;
 }
 
+/* Ícone do serviço */
 .service-card .icon {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -20,18 +33,24 @@
     opacity: 0.95;
 }
 
+/* Título do serviço */
 .service-card h3 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 700;
 }
 
+/* Texto do serviço */
 .service-card p {
     color: var(--text-muted);
     line-height: 1.7;
     margin: 0;
 }
 
+/* -------------------------------------------------
+   MOBILE
+   Reduz densidade visual em ecrãs pequenos.
+------------------------------------------------- */
 @media (max-width: 640px) {
     .service-card {
         padding: 2.25rem 1.5rem;

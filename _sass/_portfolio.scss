@@ -1,7 +1,13 @@
 /* =========================================================
    PORTFÓLIO
+   Define a grelha de projetos e o conteúdo interno
+   de cada cartão do portfólio.
 ========================================================= */
 
+/* -------------------------------------------------
+   GRELHA DE PORTFÓLIO
+   Cria colunas responsivas com largura mínima controlada.
+------------------------------------------------- */
 .grid-portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -9,17 +15,20 @@
     margin-top: 3rem;
 }
 
+/* Cartão individual do portfólio */
 .portfolio-item {
     padding: 4rem 2rem;
     text-align: center;
 }
 
+/* Título do projeto */
 .portfolio-item h4 {
     margin-bottom: 0.75rem;
     font-size: 1.2rem;
     font-weight: 700;
 }
 
+/* Texto de apoio do projeto */
 .portfolio-item p {
     color: var(--text-muted);
     margin: 0;

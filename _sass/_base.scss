@@ -1,17 +1,55 @@
 /* =========================================================
    BASE
+   Este ficheiro define os estilos globais e o reset base.
+   Serve para garantir consistência inicial em todo o site:
+   - remove margens e paddings padrão do browser;
+   - aplica box-sizing previsível;
+   - define tipografia base;
+   - define o fundo e cor geral do site.
 ========================================================= */
 
+/* -------------------------------------------------
+   RESET GLOBAL
+   Remove estilos padrão do browser e uniformiza o cálculo
+   do tamanho dos elementos em toda a página.
+------------------------------------------------- */
 * {
+    /* Remove margens automáticas do browser */
     margin: 0;
+
+    /* Remove paddings automáticos do browser */
     padding: 0;
+
+    /* 
+       Faz com que width/height incluam padding e border.
+       Isto torna o layout mais previsível.
+    */
     box-sizing: border-box;
+
+    /* 
+       Define a família tipográfica base do site.
+       Usa Segoe UI primeiro, depois system fonts.
+    */
     font-family: 'Segoe UI', system-ui, sans-serif;
+
+    /* Scroll suave ao navegar para âncoras (#secção) */
     scroll-behavior: smooth;
 }
 
+/* -------------------------------------------------
+   BODY
+   Define o aspeto base da página inteira.
+------------------------------------------------- */
 body {
+    /* Fundo principal do site */
     background-color: var(--bg-dark);
+
+    /* Cor base do texto */
     color: var(--text-main);
+
+    /* 
+       Altura da linha para boa leitura.
+       1.6 cria um ritmo visual confortável.
+    */
     line-height: 1.6;
 }
