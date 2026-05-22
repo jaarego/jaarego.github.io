@@ -20,7 +20,8 @@
   max-width: 1200px; /* Largura máxima do conteúdo */
   margin: 0 auto; /* Centra horizontalmente */
   display: grid; /* Ativa o layout em grelha */
-  grid-template-columns: 1.35fr 0.95fr; /* Texto maior à esquerda, destaques à direita */
+  /*grid-template-columns: 1.35fr 0.95fr; /* Texto maior à esquerda, destaques à direita */
+  grid-template-columns: 1fr; /* Tudo empilhado */
   gap: 42px; /* Espaço entre as colunas */
   align-items: start; /* Alinha tudo ao topo */
 }
