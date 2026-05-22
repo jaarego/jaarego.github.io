@@ -19,11 +19,12 @@
 .about-container {
   max-width: 1200px; /* Largura máxima do conteúdo */
   margin: 0 auto; /* Centra horizontalmente */
-  display: grid; /* Ativa o layout em grelha */
+  display: block; /* Ativa o layout em grelha */
+  /*display: grid; /* Ativa o layout em grelha */
   /*grid-template-columns: 1.35fr 0.95fr; /* Texto maior à esquerda, destaques à direita */
-  grid-template-columns: 1fr; /* Tudo empilhado */
-  gap: 42px; /* Espaço entre as colunas */
-  align-items: start; /* Alinha tudo ao topo */
+  /*grid-template-columns: 1fr; /* Tudo empilhado */
+  /*gap: 42px; /* Espaço entre as colunas */
+  /*align-items: start; /* Alinha tudo ao topo */
 }
 
 /* -------------------------------------------------
@@ -33,6 +34,8 @@
 ------------------------------------------------- */
 .about-content {
   max-width: 760px;
+  margin: 0 auto 48px; /* Centra o bloco e cria espaço antes dos cartões */
+  text-align: center; /* Centra os elementos curtos, como eyebrow e título */
 }
 
 /* -------------------------------------------------
@@ -71,7 +74,8 @@
    ligeiramente mais suave do que o título.
 ------------------------------------------------- */
 .about-text {
-  margin: 0 0 18px;
+  margin: 0 auto 18px; /* Centra o próprio parágrafo dentro do bloco */
+  max-width: 70ch; /* Limita a largura para leitura confortável */
   font-size: 1.05rem;
   line-height: 1.8;
   color: inherit;
@@ -84,7 +88,10 @@
 ------------------------------------------------- */
 .about-highlights {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 cartões por linha em desktop */
   gap: 18px;
+  max-width: 1100px; /* Evita que a grelha fique demasiado larga */
+  margin: 0 auto; /* Centra a grelha por baixo do texto */
 }
 
 /* -------------------------------------------------
@@ -99,6 +106,7 @@
 ------------------------------------------------- */
 .highlight-card {
     padding: 24px;
+    height: 100%; /* Ajuda os cartões a ficarem mais equilibrados na grelha */
 }
 
 /* -------------------------------------------------
@@ -144,17 +152,17 @@
    As duas colunas passam para uma só.
 ------------------------------------------------- */
 @media (max-width: 960px) {
-  .about-container {
-    grid-template-columns: 1fr; /* Tudo empilhado */
-    gap: 30px;
-  }
-
   .about-section {
     padding: 72px 20px; /* Reduz o espaçamento vertical */
   }
 
   .about-title {
     font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr; /* Em tablet os cartões ficam um por linha */
+    /*grid-template-columns: repeat(2, minmax(0, 1fr)); /* Em tablet passa para 2 colunas */
   }
 }
 
@@ -166,6 +174,10 @@
   .about-text {
     font-size: 1rem;
     line-height: 1.75;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr; /* Em mobile os cartões ficam um por linha */
   }
 
   .highlight-card {
