@@ -88,10 +88,10 @@
 ------------------------------------------------- */
 .about-highlights {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 cartões por linha em desktop */
+  grid-template-columns: 1fr; /* Cartões sempre um por linha */
   gap: 18px;
-  max-width: 1100px; /* Evita que a grelha fique demasiado larga */
-  margin: 0 auto; /* Centra a grelha por baixo do texto */
+  max-width: 900px; /* Mantém a coluna mais controlada visualmente */
+  margin: 0 auto;
 }
 
 /* -------------------------------------------------
@@ -160,10 +160,9 @@
     font-size: clamp(1.8rem, 7vw, 2.6rem);
   }
 
-  .about-highlights {
-    grid-template-columns: 1fr; /* Em tablet os cartões ficam um por linha */
+ /* .about-highlights {
     /*grid-template-columns: repeat(2, minmax(0, 1fr)); /* Em tablet passa para 2 colunas */
-  }
+ /*}*/
 }
 
 /* -------------------------------------------------
@@ -176,9 +175,9 @@
     line-height: 1.75;
   }
 
-  .about-highlights {
-    grid-template-columns: 1fr; /* Em mobile os cartões ficam um por linha */
-  }
+  /*.about-highlights {
+    /*grid-template-columns: 1fr; /* Em mobile os cartões ficam um por linha */
+  }*/
 
   .highlight-card {
     padding: 20px;
