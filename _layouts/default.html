@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOUNDWAVE produções | Áudio Profissional</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
+
 <body>
 
     {% include navbar.html %}
@@ -14,7 +16,10 @@
         {% include hero.html %}
         {% include info.html %}
         {% include services.html %}
+        
+        {% comment %}
         {% include portfolio.html %}
+        {% endcomment %}
 
         <section id="blog" class="blog">
             {% include blog.html %}
@@ -33,4 +38,5 @@
 
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
+
 </html>
