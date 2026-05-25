@@ -1,11 +1,6 @@
-remote_theme:
-plugins:
-  - jekyll-remote-theme
-
 title: Soundwave
 description: Produção de eventos
 
-# Front matter defaults para posts
 defaults:
   - scope:
       path: ""
