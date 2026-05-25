@@ -1,14 +1,23 @@
 <div class="contact-layout">
     <div class="contact-info-card">
-        <h2>Vamos Trabalhar Juntos?</h2>
+        <h2>Vamos trocar ideias</h2>
         <p>
-            Explica-nos o teu projeto e respondemos em menos de 24 horas.
+            Sinta-se à vontade para nos enviar um e-mail ou preencher o formulário para conversarmos sobre os detalhes do seu próximo evento.
+        </p>
+
+        <p>
+            Será um prazer colaborar e transformar suas ideias em uma experiência única e inesquecível!
         </p>
 
         <div class="contact-details">
             <div class="contact-item">
+                <span class="contact-label">Morada</span>
+                <p class="contact-text">Rua Francisco A. Brás<br>7350 504 Elvas / Portugal</p>
+            </div>
+
+            <div class="contact-item">
                 <span class="contact-label">Telefone</span>
-                <a href="tel:+351964807181" class="contact-link">+351 964 807 181</a>
+                <a href="tel:+351964807181" class="contact-link">00351 964 807 181</a>
             </div>
 
             <div class="contact-item">
@@ -17,30 +26,40 @@
                     soundwaveproducoes@gmail.com
                 </a>
             </div>
-
-            <div class="contact-item">
-                <span class="contact-label">Localização</span>
-                <p class="contact-text">7350-504 ELVAS / PORTUGAL</p>
-            </div>
         </div>
     </div>
 
     <div class="contact-form-card">
         <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
             <input type="hidden" name="access_key" value="de7e4241-031c-41dc-b408-7dcd6bf8232e">
-
             <input type="checkbox" name="botcheck" class="hidden-honeypot">
 
             <div class="form-group">
-                <input type="text" name="Nome" placeholder="Teu Nome" required>
+                <input type="text" name="Nome" placeholder="Nome" required>
             </div>
 
             <div class="form-group">
-                <input type="email" name="Email" placeholder="Teu Email" required>
+                <input type="text" name="Sobrenome" placeholder="Sobrenome">
             </div>
 
             <div class="form-group">
-                <textarea name="Mensagem" placeholder="Fala-nos sobre a tua ideia musical..." rows="5" required></textarea>
+                <input type="email" name="Email" placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="Assunto" placeholder="Assunto" required>
+            </div>
+
+            <div class="form-group">
+                <input type="date" name="Data do evento" placeholder="Data do evento">
+            </div>
+
+            <div class="form-group">
+                <input type="tel" name="Telefone" placeholder="Telefone">
+            </div>
+
+            <div class="form-group">
+                <textarea name="Mensagem" placeholder="Mensagem" rows="5"></textarea>
             </div>
 
             <button type="submit" class="btn-submit">Enviar Mensagem</button>
