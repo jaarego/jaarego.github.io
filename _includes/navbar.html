@@ -3,12 +3,7 @@
         <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="SOUNDWAVE produções">
     </a>
 
-    <button
-        class="menu-toggle"
-        id="mobile-menu"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="nav-list"
+    <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list"
         type="button">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -17,14 +12,14 @@
 
     <nav aria-label="Navegação principal">
         <ul class="nav-links" id="nav-list">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#quem-somos">Quem Somos</a></li>
-            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="{{ '/#inicio' | relative_url }}">Início</a></li>
+            <li><a href="{{ '/#quem-somos' | relative_url }}">Quem Somos</a></li>
+            <li><a href="{{ '/#servicos' | relative_url }}">Serviços</a></li>
             {% comment %}
-            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="{{ '/#portfolio' | relative_url }}">Portfólio</a></li>
             {% endcomment %}
-            <li><a href="#blog">Novidades</a></li>
-            <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+            <li><a href="{{ '/#blog' | relative_url }}">Novidades</a></li>
+            <li><a href="{{ '/#contacto' | relative_url }}" class="btn-nav">Contacto</a></li>
         </ul>
     </nav>
 </header>
