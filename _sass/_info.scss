@@ -19,7 +19,7 @@
 .about-container {
   max-width: 1200px; /* Largura máxima do conteúdo */
   margin: 0 auto; /* Centra horizontalmente */
-  display: block; /* Ativa o layout em grelha */
+  /*display: block; /* Ativa o layout em grelha */
   /*display: grid; /* Ativa o layout em grelha */
   /*grid-template-columns: 1.35fr 0.95fr; /* Texto maior à esquerda, destaques à direita */
   /*grid-template-columns: 1fr; /* Tudo empilhado */
@@ -33,8 +33,8 @@
    e ser mais confortável de ler.
 ------------------------------------------------- */
 .about-content {
-  max-width: 760px;
-  margin: 0 auto 48px; /* Centra o bloco e cria espaço antes dos cartões */
+  max-width: 900px;
+  margin: 0 auto; /* Centra o bloco e cria espaço antes dos cartões */
   text-align: center; /* Centra os elementos curtos, como eyebrow e título */
 }
 
@@ -53,6 +53,7 @@
   text-transform: uppercase;
   color: inherit;
   opacity: 0.75;
+  
 }
 
 /* -------------------------------------------------
@@ -75,11 +76,13 @@
 ------------------------------------------------- */
 .about-text {
   margin: 0 auto 18px; /* Centra o próprio parágrafo dentro do bloco */
-  max-width: 70ch; /* Limita a largura para leitura confortável */
+  max-width: none; /* Limita a largura para leitura confortável */
   font-size: 1.05rem;
   line-height: 1.8;
   color: inherit;
   opacity: 0.88; /* Suaviza o texto sem o apagar demasiado */
+  text-align: justify; /* Justifica o texto para um visual mais limpo em blocos maiores */
+  text-justify: inter-word; /* Justifica o texto para um visual mais limpo em blocos maiores */
 }
 
 /* -------------------------------------------------
@@ -94,59 +97,6 @@
   margin: 0 auto;
 }
 
-/* -------------------------------------------------
-   CARTÃO DE DESTAQUE
-   Aqui está a "mistura" que pediste:
-   - a secção geral continua transparente
-   - mas cada cartão mantém o efeito visual
-     rico da primeira versão
-   Isto devolve presença, volume e contraste.
-   usa a cor herdada para manter a consistência visual do site, 
-   mas com opacidade para criar um efeito de destaque sem ser muito pesado.
-------------------------------------------------- */
-.highlight-card {
-    padding: 24px;
-    height: 100%; /* Ajuda os cartões a ficarem mais equilibrados na grelha */
-    text-align: center; /* Centra o número, o título e o texto dentro do cartão */
-}
-
-/* -------------------------------------------------
-   NÚMERO DO CARTÃO
-   Ex.: 01, 02, 03
-   Dá ritmo e hierarquia visual aos destaques.
-------------------------------------------------- */
-.highlight-number {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: inherit;
-  opacity: 0.65;
-}
-
-/* -------------------------------------------------
-   TÍTULO DE CADA CARTÃO
-   Elemento principal dentro da caixa.
-------------------------------------------------- */
-.highlight-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: inherit;
-}
-
-/* -------------------------------------------------
-   TEXTO DE APOIO DE CADA CARTÃO
-   Um pouco mais leve para criar hierarquia.
-------------------------------------------------- */
-.highlight-card p {
-  margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: inherit;
-  opacity: 0.8;
-}
 
 /* -------------------------------------------------
    RESPONSIVO - TABLET E ECRÃS MÉDIOS
