@@ -29,7 +29,7 @@
        Cor base para caixas, cartões e superfícies secundárias.
        Dá contraste em relação ao fundo principal.
     */
-    --bg-card: #151c2c;
+    --bg-card: var(--hero-bg); /*#151c2c;
 
     /* 
        Cor de destaque do projeto.
