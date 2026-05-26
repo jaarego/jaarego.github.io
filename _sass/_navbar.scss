@@ -113,3 +113,31 @@
 .menu-toggle {
     display: none;
 }
+
+/* -------------------------------------------------
+   REDES SOCIAIS NA NAVBAR
+   Ícones alinhados à direita, com espaçamento e hover.*/
+.nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Links dos ícones sociais */
+.nav-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover e foco dos ícones sociais */
+.nav-socials a:hover,
+.nav-socials a:focus-visible {
+    color: var(--accent);
+    transform: translateY(-1px);
+}
