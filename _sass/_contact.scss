@@ -146,6 +146,7 @@
     -webkit-appearance: none;
     appearance: none;
     min-height: 56px;
+    -webkit-min-logical-width: calc(100% - 16px);
 }
 
 /* Placeholder */
