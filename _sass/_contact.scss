@@ -141,6 +141,12 @@
     box-sizing: border-box;
 }
 
+/* Campo de data */
+.contact-form input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    min-height: 56px;
+}
 
 /* Placeholder */
 .contact-form input::placeholder,
