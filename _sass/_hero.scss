@@ -24,8 +24,8 @@
     /* Espaço lateral interno */
     padding: 0 2rem;
 
-    /* Fundo com glow subtil no centro */
-    background: radial-gradient(circle at center, rgba(0, 210, 255, 0.08) 0%, rgba(11, 15, 25, 1) 70%);
+    /* Fundo hero */
+    background: var(--hero-bg);
 }
 
 /* Título principal do hero */
