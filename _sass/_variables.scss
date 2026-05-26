@@ -15,6 +15,9 @@
     */
     --bg-dark: black;/* #0b0f19;*/
 
+    /* Fundo com glow subtil no centro */
+    --hero-bg: radial-gradient(circle at center, rgba(0, 210, 255, 0.08) 0%, rgba(11, 15, 25, 1) 70%);
+
     /* 
        Cor base para caixas, cartões e superfícies secundárias.
        Dá contraste em relação ao fundo principal.
