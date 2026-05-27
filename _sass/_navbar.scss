@@ -62,18 +62,29 @@
 
     /* Impede que o logo encolha demasiado */
     flex-shrink: 0;
+
+    line-height: 0; /* Evita espaços verticais indesejados */
 }
 
 /* Imagem do logótipo */
 .logo img {
-    /* Altura base do logo em desktop */
-    height: 72px;
+    /* Exibe a imagem como bloco para evitar espaços indesejados */
+    display: block;
+
+    /* Altura responsiva, mantendo proporção */
+    height: clamp(42px, 4.5vw, 56px) !important;
 
     /* Mantém proporção correta */
-    width: auto;
+    width: auto !important;
 
     /* Limite máximo de largura */
-    max-width: 300px;
+    max-width: 100%;
+
+    /* Garante que a imagem se encaixe dentro do espaço disponível */
+    object-fit: contain;
+
+    /* Alinhamento vertical ao centro */
+    align-self: center;
 }
 
 /* -------------------------------------------------
