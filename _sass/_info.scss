@@ -81,8 +81,8 @@
   line-height: 1.8;
   color: inherit;
   opacity: 0.88; /* Suaviza o texto sem o apagar demasiado */
-  text-align: justify; /* Justifica o texto para um visual mais limpo em blocos maiores */
-  text-justify: inter-word; /* Justifica o texto para um visual mais limpo em blocos maiores */
+  text-align: left; /* Justifica o texto para um visual mais limpo em blocos maiores */
+  /*text-justify: inter-word; /* Justifica o texto para um visual mais limpo em blocos maiores */
 }
 
 /* -------------------------------------------------
