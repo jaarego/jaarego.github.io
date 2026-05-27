@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | SOUNDWAVE</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
+
 <body>
 
     {% include navbar.html %}
@@ -22,20 +24,26 @@
                 </p>
 
                 {% if page.image %}
-                <img
-                    src="{{ page.image }}"
-                    alt="{{ page.image_alt | default: page.title }}"
-                    class="post-featured-image"
-                >
+                <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}"
+                    class="post-featured-image">
                 {% endif %}
             </header>
 
             <div class="post-content">
                 {{ content }}
             </div>
+
+            {% if page.facebook_url %}
+            <p class="post-content">
+                <a href="{{ page.facebook_url }}" target="_blank" rel="noopener noreferrer">
+                    Ver post no Facebook
+                </a>
+            </p>
+            {% endif %}
         </article>
     </main>
 
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
+
 </html>

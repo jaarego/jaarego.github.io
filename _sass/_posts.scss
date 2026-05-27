@@ -9,11 +9,12 @@
    lista empilhada numa única coluna.
 
    Nota útil
-    Se depois vires que alguns cards de novidades ficam com alturas 
-    muito diferentes por causa do tamanho do excerto, podemos no passo 
-    seguinte limitar o resumo com line-clamp. Essa técnica é frequentemente 
+    Se depois vires que alguns cards de novidades ficam com alturas
+    muito diferentes por causa do tamanho do excerto, podemos no passo
+    seguinte limitar o resumo com line-clamp. Essa técnica é frequentemente
     usada para manter alinhamento visual entre cards com textos de comprimentos diferentes.
 ========================================================= */
+
 
 
 /* -------------------------------------------------
@@ -21,7 +22,7 @@
    Em desktop mostramos 3 colunas.
    Em tablet reduzimos para 2.
    Em mobile passa para 1.
-   
+
    Isto mantém a secção consistente com o restante
    padrão visual do site, que já usa cards em grelha.
 ------------------------------------------------- */
@@ -34,11 +35,29 @@
 }
 
 
+
+/* -------------------------------------------------
+   LINK EXTERIOR DO CARD
+   O link passa a envolver o cartão inteiro, para que
+   toda a área fique clicável e mais intuitiva.
+
+   display: block faz o link comportar-se como um bloco
+   completo dentro da grelha.
+------------------------------------------------- */
+.post-card-link {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
 /* -------------------------------------------------
    CARD INDIVIDUAL DE POST
    Cada card usa a base visual global definida em
    _cards.scss; aqui ajustamos apenas o layout interno.
-   
+
    display: flex + flex-direction: column ajuda a manter
    a estrutura interna mais estável entre cards com
    conteúdos ligeiramente diferentes.
@@ -48,7 +67,35 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+
+/* -------------------------------------------------
+   ESTADO INTERATIVO DO CARD
+   Como o link agora envolve todo o cartão, o hover e o
+   focus devem refletir-se na peça inteira e não apenas
+   no título.
+
+   Isto reforça visualmente que todo o card é clicável.
+------------------------------------------------- */
+.post-card-link:hover .post-card,
+.post-card-link:focus-visible .post-card {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.post-card-link:focus-visible {
+    outline: none;
+}
+
+.post-card-link:focus-visible .post-card {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
 
 
 /* -------------------------------------------------
@@ -64,6 +111,7 @@
 }
 
 
+
 /* -------------------------------------------------
    TÍTULO DO CARD
    Espaçamento entre a data e o título, e depois
@@ -71,24 +119,24 @@
 ------------------------------------------------- */
 .post-card-title {
     margin: 0.5rem 0 0.75rem;
-}
-
-
-/* -------------------------------------------------
-   LINK DO TÍTULO
-   O título do post é clicável.
-   Mantemos um hover simples e coerente com o site.
-------------------------------------------------- */
-.post-card-title-link {
     color: var(--text-main);
-    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.post-card-title-link:hover,
-.post-card-title-link:focus-visible {
+
+
+/* -------------------------------------------------
+   TÍTULO EM HOVER / FOCUS
+   Mantemos a mudança de cor no título para que o
+   utilizador continue a sentir um comportamento
+   semelhante ao link anterior, mas agora aplicado
+   ao cartão inteiro.
+------------------------------------------------- */
+.post-card-link:hover .post-card-title,
+.post-card-link:focus-visible .post-card-title {
     color: var(--accent);
 }
+
 
 
 /* -------------------------------------------------
@@ -101,6 +149,7 @@
     font-size: 0.95rem;
     line-height: 1.7;
 }
+
 
 
 /* -------------------------------------------------
@@ -119,6 +168,7 @@
 }
 
 
+
 /* -------------------------------------------------
    RESPONSIVO - TABLET
    Reduzimos a grelha para 2 colunas em larguras
@@ -129,6 +179,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
 
 
 /* -------------------------------------------------
@@ -143,11 +194,13 @@
 }
 
 
+
 /* =========================================================
    PÁGINA INDIVIDUAL DO POST
    Estilos usados quando o utilizador abre um post
    específico fora da homepage.
 ========================================================= */
+
 
 
 /* -------------------------------------------------
@@ -162,6 +215,7 @@
 }
 
 
+
 /* -------------------------------------------------
    CONTENTOR DO POST
    Garante que o artigo ocupa a largura disponível
@@ -170,6 +224,7 @@
 .post-container {
     width: 100%;
 }
+
 
 
 /* -------------------------------------------------
@@ -191,6 +246,7 @@
 }
 
 
+
 /* -------------------------------------------------
    TÍTULO PRINCIPAL DO POST
 ------------------------------------------------- */
@@ -201,6 +257,7 @@
 }
 
 
+
 /* -------------------------------------------------
    META INFORMAÇÃO
    Linha usada para data de publicação.
@@ -209,6 +266,7 @@
     color: var(--text-muted);
     margin-bottom: 3rem;
 }
+
 
 
 /* -------------------------------------------------
@@ -225,14 +283,16 @@
 }
 
 
+
 /* -------------------------------------------------
    FLUXO DO CONTEÚDO
    Cria espaçamento automático entre elementos
    consecutivos dentro do conteúdo do post.
 ------------------------------------------------- */
-.post-content>*+* {
+.post-content > * + * {
     margin-top: 1.25rem;
 }
+
 
 
 /* -------------------------------------------------
@@ -249,6 +309,7 @@
 }
 
 
+
 /* -------------------------------------------------
    TEXTO E LISTAS
    Mantém a cor principal para boa legibilidade.
@@ -257,6 +318,7 @@
 .post-content li {
     color: var(--text-main);
 }
+
 
 
 /* -------------------------------------------------
@@ -269,6 +331,7 @@
 }
 
 
+
 /* -------------------------------------------------
    LINKS DENTRO DO POST
    Mantêm destaque através da cor accent e underline.
@@ -278,6 +341,7 @@
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+
 
 
 /* -------------------------------------------------
