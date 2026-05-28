@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Soundwave Produções",
+  "url": "https://soundwaveproducoes.pt/",
+  "logo": "https://soundwaveproducoes.pt/assets/images/logo.png",
+  "email": "soundwaveproducoes@gmail.com",
+  "telephone": "+351964807181",
+  "sameAs": [
+    "https://www.facebook.com/soundwaveproducoes",
+    "https://www.instagram.com/soundwave_producoes/"
+  ]
+}
