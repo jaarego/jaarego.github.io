@@ -1,5 +1,9 @@
 title: Soundwave
 description: Produção de eventos
+url: "https://soundwaveproducoes.pt"
+
+plugins:
+  - jekyll-sitemap
 
 defaults:
   - scope:
